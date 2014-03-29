@@ -36,6 +36,7 @@ public class MainPanel extends JFrame implements ActionListener {
      * initiate the UI for Main Panel
      */
     public void initUI() {
+    	System.out.println("Test");
         
         JPanel functionPanel = new JPanel();
         functionPanel.setLayout(new BoxLayout(functionPanel, BoxLayout.Y_AXIS));
