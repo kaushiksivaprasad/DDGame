@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<characters>
+    <character>
+        <character xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="player">
+            <type>Bully</type>
+            <imagePath>Hero1.gif</imagePath>
+            <name>Kaushik</name>
+            <health>20</health>
+            <constitutionModifier>1</constitutionModifier>
+            <strengthModifier>2</strengthModifier>
+            <dexterityModifier>0</dexterityModifier>
+            <level>1</level>
+            <strength>15</strength>
+            <constitution>12</constitution>
+            <intelligence>9</intelligence>
+            <charisma>19</charisma>
+            <vitality>0</vitality>
+            <inventory>
+                <equippedWeapon>
+                    <itemID>0</itemID>
+                    <weaponType>Melee Weapon</weaponType>
+                    <attackRange>1</attackRange>
+                    <attackPts>5</attackPts>
+                    <name>Short Sword</name>
+                </equippedWeapon>
+                <chest>
+                    <itemID>0</itemID>
+                    <name>FullPlate</name>
+                    <armourPts>8</armourPts>
+                    <armourType>chest</armourType>
+                </chest>
+                <shield>
+                    <itemID>0</itemID>
+                    <name>TowerShield</name>
+                    <armourPts>4</armourPts>
+                    <armourType>shield</armourType>
+                </shield>
+                <items xsi:type="weapon">
+                    <itemID>0</itemID>
+                    <weaponType>Ranged Weapon</weaponType>
+                    <attackRange>2</attackRange>
+                    <attackPts>5</attackPts>
+                    <name>Long Bow</name>
+                </items>
+            </inventory>
+            <dexterity>11</dexterity>
+            <wisdom>13</wisdom>
+        </character>
+        <character xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="player">
+            <type>Nimble</type>
+            <imagePath>Hero1.gif</imagePath>
+            <name>Akash2</name>
+            <health>20</health>
+            <constitutionModifier>3</constitutionModifier>
+            <strengthModifier>1</strengthModifier>
+            <dexterityModifier>3</dexterityModifier>
+            <level>1</level>
+            <strength>13</strength>
+            <constitution>16</constitution>
+            <intelligence>10</intelligence>
+            <charisma>15</charisma>
+            <vitality>0</vitality>
+            <inventory>
+                <equippedWeapon>
+                    <itemID>0</itemID>
+                    <weaponType>Melee Weapon</weaponType>
+                    <attackRange>1</attackRange>
+                    <attackPts>5</attackPts>
+                    <name>Short Sword</name>
+                </equippedWeapon>
+                <chest>
+                    <itemID>0</itemID>
+                    <name>FullPlate</name>
+                    <armourPts>8</armourPts>
+                    <armourType>chest</armourType>
+                </chest>
+                <shield>
+                    <itemID>0</itemID>
+                    <name>TowerShield</name>
+                    <armourPts>4</armourPts>
+                    <armourType>shield</armourType>
+                </shield>
+                <items xsi:type="weapon">
+                    <itemID>0</itemID>
+                    <weaponType>Ranged Weapon</weaponType>
+                    <attackRange>2</attackRange>
+                    <attackPts>5</attackPts>
+                    <name>Long Bow</name>
+                </items>
+            </inventory>
+            <dexterity>17</dexterity>
+            <wisdom>12</wisdom>
+        </character>
+        <character xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="player">
+            <type>Nimble</type>
+            <imagePath>Hero1.gif</imagePath>
+            <name>Akash3</name>
+            <health>20</health>
+            <constitutionModifier>3</constitutionModifier>
+            <strengthModifier>1</strengthModifier>
+            <dexterityModifier>3</dexterityModifier>
+            <level>1</level>
+            <strength>13</strength>
+            <constitution>16</constitution>
+            <intelligence>10</intelligence>
+            <charisma>15</charisma>
+            <vitality>0</vitality>
+            <inventory>
+                <equippedWeapon>
+                    <itemID>0</itemID>
+                    <weaponType>Melee Weapon</weaponType>
+                    <attackRange>1</attackRange>
+                    <attackPts>5</attackPts>
+                    <name>Short Sword</name>
+                </equippedWeapon>
+                <chest>
+                    <itemID>0</itemID>
+                    <name>FullPlate</name>
+                    <armourPts>8</armourPts>
+                    <armourType>chest</armourType>
+                </chest>
+                <shield>
+                    <itemID>0</itemID>
+                    <name>TowerShield</name>
+                    <armourPts>4</armourPts>
+                    <armourType>shield</armourType>
+                </shield>
+                <items xsi:type="weapon">
+                    <itemID>0</itemID>
+                    <weaponType>Ranged Weapon</weaponType>
+                    <attackRange>2</attackRange>
+                    <attackPts>5</attackPts>
+                    <name>Long Bow</name>
+                </items>
+            </inventory>
+            <dexterity>17</dexterity>
+            <wisdom>12</wisdom>
+        </character>
+        <character xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="player">
+            <type>Nimble</type>
+            <imagePath>Hero2.gif</imagePath>
+            <name>Hero</name>
+            <health>20</health>
+            <constitutionModifier>4</constitutionModifier>
+            <strengthModifier>3</strengthModifier>
+            <dexterityModifier>5</dexterityModifier>
+            <level>1</level>
+            <strength>17</strength>
+            <constitution>18</constitution>
+            <intelligence>12</intelligence>
+            <charisma>14</charisma>
+            <vitality>0</vitality>
+            <inventory>
+                <equippedWeapon>
+                    <itemID>0</itemID>
+                    <weaponType>Melee Weapon</weaponType>
+                    <attackRange>1</attackRange>
+                    <attackPts>10</attackPts>
+                    <name>Long Sword</name>
+                </equippedWeapon>
+                <chest>
+                    <itemID>0</itemID>
+                    <name>Chain Shirt</name>
+                    <armourPts>4</armourPts>
+                    <armourType>chest</armourType>
+                </chest>
+                <shield>
+                    <itemID>0</itemID>
+                    <name>Buckler</name>
+                    <armourPts>1</armourPts>
+                    <armourType>shield</armourType>
+                </shield>
+                <items xsi:type="weapon">
+                    <itemID>0</itemID>
+                    <weaponType>Ranged Weapon</weaponType>
+                    <attackRange>2</attackRange>
+                    <attackPts>5</attackPts>
+                    <name>Long Bow</name>
+                </items>
+            </inventory>
+            <dexterity>21</dexterity>
+            <wisdom>13</wisdom>
+        </character>
+        <character xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="player">
+            <type>Nimble</type>
+            <imagePath>Hero2.gif</imagePath>
+            <name>Hero2</name>
+            <health>20</health>
+            <constitutionModifier>4</constitutionModifier>
+            <strengthModifier>3</strengthModifier>
+            <dexterityModifier>5</dexterityModifier>
+            <level>1</level>
+            <strength>17</strength>
+            <constitution>18</constitution>
+            <intelligence>12</intelligence>
+            <charisma>14</charisma>
+            <vitality>0</vitality>
+            <inventory>
+                <equippedWeapon>
+                    <itemID>0</itemID>
+                    <weaponType>Melee Weapon</weaponType>
+                    <attackRange>1</attackRange>
+                    <attackPts>10</attackPts>
+                    <name>Long Sword</name>
+                </equippedWeapon>
+                <chest>
+                    <itemID>0</itemID>
+                    <name>Chain Shirt</name>
+                    <armourPts>4</armourPts>
+                    <armourType>chest</armourType>
+                </chest>
+                <shield>
+                    <itemID>0</itemID>
+                    <name>Buckler</name>
+                    <armourPts>1</armourPts>
+                    <armourType>shield</armourType>
+                </shield>
+                <items xsi:type="weapon">
+                    <itemID>0</itemID>
+                    <weaponType>Ranged Weapon</weaponType>
+                    <attackRange>2</attackRange>
+                    <attackPts>5</attackPts>
+                    <name>Long Bow</name>
+                </items>
+            </inventory>
+            <dexterity>21</dexterity>
+            <wisdom>13</wisdom>
+        </character>
+    </character>
+</characters>

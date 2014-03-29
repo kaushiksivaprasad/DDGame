@@ -1,0 +1,1399 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Map>
+    <mapList>
+        <mapName>TestMap</mapName>
+        <pathMap>
+            <entry>
+                <key>1</key>
+                <value>
+                    <location>1</location>
+                    <endTile>false</endTile>
+                    <startTile>true</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>2</key>
+                <value>
+                    <location>2</location>
+                    <endTile>false</endTile>
+                    <startTile>true</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>8</key>
+                <value>
+                    <location>8</location>
+                    <endTile>false</endTile>
+                    <startTile>true</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>9</key>
+                <value>
+                    <location>9</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>16</key>
+                <value>
+                    <location>16</location>
+                    <enemy>
+                        <type>Tank</type>
+                        <imagePath>monster3.gif</imagePath>
+                        <name>TerribleAkash</name>
+                        <health>10</health>
+                        <constitutionModifier>3</constitutionModifier>
+                        <strengthModifier>0</strengthModifier>
+                        <dexterityModifier>2</dexterityModifier>
+                        <level>2</level>
+                        <strength>10</strength>
+                        <constitution>16</constitution>
+                        <intelligence>13</intelligence>
+                        <charisma>17</charisma>
+                        <vitality>0</vitality>
+                        <inventory>
+                            <equippedWeapon>
+<itemID>0</itemID>
+<weaponType>Melee Weapon</weaponType>
+<attackRange>1</attackRange>
+<attackPts>5</attackPts>
+<name>Short Sword</name>
+                            </equippedWeapon>
+                            <chest>
+<itemID>0</itemID>
+<name>FullPlate</name>
+<armourPts>8</armourPts>
+<armourType>chest</armourType>
+                            </chest>
+                            <shield>
+<itemID>0</itemID>
+<name>TowerShield</name>
+<armourPts>4</armourPts>
+<armourType>shield</armourType>
+                            </shield>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+<itemID>0</itemID>
+<weaponType>Ranged Weapon</weaponType>
+<attackRange>2</attackRange>
+<attackPts>5</attackPts>
+<name>Long Bow</name>
+                            </items>
+                        </inventory>
+                        <dexterity>15</dexterity>
+                        <wisdom>11</wisdom>
+                    </enemy>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>17</key>
+                <value>
+                    <location>17</location>
+                    <enemy>
+                        <type>Tank</type>
+                        <imagePath>monster1.gif</imagePath>
+                        <name>Akash</name>
+                        <health>10</health>
+                        <constitutionModifier>5</constitutionModifier>
+                        <strengthModifier>1</strengthModifier>
+                        <dexterityModifier>2</dexterityModifier>
+                        <level>2</level>
+                        <strength>13</strength>
+                        <constitution>20</constitution>
+                        <intelligence>12</intelligence>
+                        <charisma>7</charisma>
+                        <vitality>0</vitality>
+                        <inventory>
+                            <equippedWeapon>
+<itemID>0</itemID>
+<weaponType>Melee Weapon</weaponType>
+<attackRange>1</attackRange>
+<attackPts>5</attackPts>
+<name>Short Sword</name>
+                            </equippedWeapon>
+                            <chest>
+<itemID>0</itemID>
+<name>FullPlate</name>
+<armourPts>8</armourPts>
+<armourType>chest</armourType>
+                            </chest>
+                            <shield>
+<itemID>0</itemID>
+<name>TowerShield</name>
+<armourPts>4</armourPts>
+<armourType>shield</armourType>
+                            </shield>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+<itemID>0</itemID>
+<weaponType>Ranged Weapon</weaponType>
+<attackRange>2</attackRange>
+<attackPts>5</attackPts>
+<name>Long Bow</name>
+                            </items>
+                        </inventory>
+                        <dexterity>14</dexterity>
+                        <wisdom>8</wisdom>
+                    </enemy>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>23</key>
+                <value>
+                    <location>23</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>24</key>
+                <value>
+                    <location>24</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>30</key>
+                <value>
+                    <location>30</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>31</key>
+                <value>
+                    <location>31</location>
+                    <endTile>true</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+        </pathMap>
+        <userLocation/>
+        <startPointInfo>1</startPointInfo>
+        <startPointInfo>2</startPointInfo>
+        <startPointInfo>8</startPointInfo>
+        <rows>7</rows>
+        <columns>7</columns>
+    </mapList>
+    <mapList>
+        <mapName>TestMap2</mapName>
+        <pathMap>
+            <entry>
+                <key>1</key>
+                <value>
+                    <location>1</location>
+                    <endTile>false</endTile>
+                    <startTile>true</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>2</key>
+                <value>
+                    <location>2</location>
+                    <endTile>false</endTile>
+                    <startTile>true</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>9</key>
+                <value>
+                    <location>9</location>
+                    <endTile>false</endTile>
+                    <startTile>true</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>10</key>
+                <value>
+                    <location>10</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>18</key>
+                <value>
+                    <location>18</location>
+                    <enemy>
+                        <type>Tank</type>
+                        <imagePath>monster3.gif</imagePath>
+                        <name>MonsterAkash</name>
+                        <health>10</health>
+                        <constitutionModifier>3</constitutionModifier>
+                        <strengthModifier>0</strengthModifier>
+                        <dexterityModifier>2</dexterityModifier>
+                        <level>2</level>
+                        <strength>10</strength>
+                        <constitution>16</constitution>
+                        <intelligence>13</intelligence>
+                        <charisma>17</charisma>
+                        <vitality>0</vitality>
+                        <inventory>
+                            <equippedWeapon>
+<itemID>0</itemID>
+<weaponType>Melee Weapon</weaponType>
+<attackRange>1</attackRange>
+<attackPts>5</attackPts>
+<name>Short Sword</name>
+                            </equippedWeapon>
+                            <chest>
+<itemID>0</itemID>
+<name>FullPlate</name>
+<armourPts>8</armourPts>
+<armourType>chest</armourType>
+                            </chest>
+                            <shield>
+<itemID>0</itemID>
+<name>TowerShield</name>
+<armourPts>4</armourPts>
+<armourType>shield</armourType>
+                            </shield>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+<itemID>0</itemID>
+<weaponType>Ranged Weapon</weaponType>
+<attackRange>2</attackRange>
+<attackPts>5</attackPts>
+<name>Long Bow</name>
+                            </items>
+                        </inventory>
+                        <dexterity>15</dexterity>
+                        <wisdom>11</wisdom>
+                    </enemy>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>19</key>
+                <value>
+                    <location>19</location>
+                    <enemy>
+                        <type>Tank</type>
+                        <imagePath>monster3.gif</imagePath>
+                        <name>MonsterMan</name>
+                        <health>10</health>
+                        <constitutionModifier>4</constitutionModifier>
+                        <strengthModifier>3</strengthModifier>
+                        <dexterityModifier>2</dexterityModifier>
+                        <level>2</level>
+                        <strength>16</strength>
+                        <constitution>18</constitution>
+                        <intelligence>17</intelligence>
+                        <charisma>13</charisma>
+                        <vitality>0</vitality>
+                        <inventory>
+                            <equippedWeapon>
+<itemID>0</itemID>
+<weaponType>Melee Weapon</weaponType>
+<attackRange>1</attackRange>
+<attackPts>5</attackPts>
+<name>Short Sword</name>
+                            </equippedWeapon>
+                            <chest>
+<itemID>0</itemID>
+<name>FullPlate</name>
+<armourPts>8</armourPts>
+<armourType>chest</armourType>
+                            </chest>
+                            <shield>
+<itemID>0</itemID>
+<name>TowerShield</name>
+<armourPts>4</armourPts>
+<armourType>shield</armourType>
+                            </shield>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+<itemID>0</itemID>
+<weaponType>Ranged Weapon</weaponType>
+<attackRange>2</attackRange>
+<attackPts>5</attackPts>
+<name>Long Bow</name>
+                            </items>
+                        </inventory>
+                        <dexterity>15</dexterity>
+                        <wisdom>19</wisdom>
+                    </enemy>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>20</key>
+                <value>
+                    <location>20</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>21</key>
+                <value>
+                    <location>21</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>22</key>
+                <value>
+                    <location>22</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>30</key>
+                <value>
+                    <location>30</location>
+                    <endTile>true</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+        </pathMap>
+        <userLocation/>
+        <startPointInfo>1</startPointInfo>
+        <startPointInfo>2</startPointInfo>
+        <startPointInfo>9</startPointInfo>
+        <rows>7</rows>
+        <columns>8</columns>
+    </mapList>
+    <mapList>
+        <mapName>TestingFunc</mapName>
+        <pathMap>
+            <entry>
+                <key>1</key>
+                <value>
+                    <location>1</location>
+                    <player>
+                        <type>Nimble</type>
+                        <imagePath>Hero1.gif</imagePath>
+                        <name>Akash3</name>
+                        <health>20</health>
+                        <constitutionModifier>3</constitutionModifier>
+                        <strengthModifier>1</strengthModifier>
+                        <dexterityModifier>3</dexterityModifier>
+                        <level>1</level>
+                        <strength>13</strength>
+                        <constitution>16</constitution>
+                        <intelligence>10</intelligence>
+                        <charisma>15</charisma>
+                        <vitality>0</vitality>
+                        <inventory>
+                            <equippedWeapon>
+<itemID>0</itemID>
+<weaponType>Melee Weapon</weaponType>
+<attackRange>1</attackRange>
+<attackPts>5</attackPts>
+<name>Short Sword</name>
+                            </equippedWeapon>
+                            <shield>
+<itemID>0</itemID>
+<name>TowerShield</name>
+<armourPts>4</armourPts>
+<armourType>shield</armourType>
+                            </shield>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+<itemID>0</itemID>
+<weaponType>Ranged Weapon</weaponType>
+<attackRange>2</attackRange>
+<attackPts>5</attackPts>
+<name>Long Bow</name>
+                            </items>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="armour">
+<itemID>0</itemID>
+<name>FullPlate</name>
+<armourPts>8</armourPts>
+<armourType>chest</armourType>
+                            </items>
+                        </inventory>
+                        <dexterity>17</dexterity>
+                        <wisdom>12</wisdom>
+                    </player>
+                    <endTile>false</endTile>
+                    <startTile>true</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>2</key>
+                <value>
+                    <location>2</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>9</key>
+                <value>
+                    <location>9</location>
+                    <player>
+                        <type>Nimble</type>
+                        <imagePath>Hero2.gif</imagePath>
+                        <name>Hero</name>
+                        <health>32</health>
+                        <constitutionModifier>4</constitutionModifier>
+                        <strengthModifier>3</strengthModifier>
+                        <dexterityModifier>5</dexterityModifier>
+                        <level>3</level>
+                        <strength>17</strength>
+                        <constitution>18</constitution>
+                        <intelligence>12</intelligence>
+                        <charisma>14</charisma>
+                        <vitality>0</vitality>
+                        <inventory>
+                            <equippedWeapon>
+<itemID>0</itemID>
+<weaponType>Melee Weapon</weaponType>
+<attackRange>1</attackRange>
+<attackPts>10</attackPts>
+<name>Long Sword</name>
+                            </equippedWeapon>
+                            <shield>
+<itemID>0</itemID>
+<name>Buckler</name>
+<armourPts>1</armourPts>
+<armourType>shield</armourType>
+                            </shield>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+<itemID>0</itemID>
+<weaponType>Ranged Weapon</weaponType>
+<attackRange>2</attackRange>
+<attackPts>5</attackPts>
+<name>Long Bow</name>
+                            </items>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="armour">
+<itemID>0</itemID>
+<name>Chain Shirt</name>
+<armourPts>4</armourPts>
+<armourType>chest</armourType>
+                            </items>
+                        </inventory>
+                        <dexterity>21</dexterity>
+                        <wisdom>13</wisdom>
+                    </player>
+                    <endTile>false</endTile>
+                    <startTile>true</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>10</key>
+                <value>
+                    <location>10</location>
+                    <player>
+                        <type>Nimble</type>
+                        <imagePath>Hero1.gif</imagePath>
+                        <name>Akash2</name>
+                        <health>20</health>
+                        <constitutionModifier>3</constitutionModifier>
+                        <strengthModifier>1</strengthModifier>
+                        <dexterityModifier>3</dexterityModifier>
+                        <level>1</level>
+                        <strength>13</strength>
+                        <constitution>16</constitution>
+                        <intelligence>10</intelligence>
+                        <charisma>15</charisma>
+                        <vitality>0</vitality>
+                        <inventory>
+                            <equippedWeapon>
+<itemID>0</itemID>
+<weaponType>Melee Weapon</weaponType>
+<attackRange>1</attackRange>
+<attackPts>5</attackPts>
+<name>Short Sword</name>
+                            </equippedWeapon>
+                            <shield>
+<itemID>0</itemID>
+<name>TowerShield</name>
+<armourPts>4</armourPts>
+<armourType>shield</armourType>
+                            </shield>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+<itemID>0</itemID>
+<weaponType>Ranged Weapon</weaponType>
+<attackRange>2</attackRange>
+<attackPts>5</attackPts>
+<name>Long Bow</name>
+                            </items>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="armour">
+<itemID>0</itemID>
+<name>FullPlate</name>
+<armourPts>8</armourPts>
+<armourType>chest</armourType>
+                            </items>
+                        </inventory>
+                        <dexterity>17</dexterity>
+                        <wisdom>12</wisdom>
+                    </player>
+                    <endTile>false</endTile>
+                    <startTile>true</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>18</key>
+                <value>
+                    <location>18</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>19</key>
+                <value>
+                    <location>19</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>20</key>
+                <value>
+                    <location>20</location>
+                    <enemy>
+                        <type>Tank</type>
+                        <imagePath>monster3.gif</imagePath>
+                        <name>MonsterAkash</name>
+                        <health>10</health>
+                        <constitutionModifier>3</constitutionModifier>
+                        <strengthModifier>0</strengthModifier>
+                        <dexterityModifier>2</dexterityModifier>
+                        <level>1</level>
+                        <strength>10</strength>
+                        <constitution>16</constitution>
+                        <intelligence>13</intelligence>
+                        <charisma>17</charisma>
+                        <vitality>0</vitality>
+                        <inventory>
+                            <equippedWeapon>
+<itemID>0</itemID>
+<weaponType>Melee Weapon</weaponType>
+<attackRange>1</attackRange>
+<attackPts>5</attackPts>
+<name>Short Sword</name>
+                            </equippedWeapon>
+                            <shield>
+<itemID>0</itemID>
+<name>TowerShield</name>
+<armourPts>4</armourPts>
+<armourType>shield</armourType>
+                            </shield>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+<itemID>0</itemID>
+<weaponType>Ranged Weapon</weaponType>
+<attackRange>2</attackRange>
+<attackPts>5</attackPts>
+<name>Long Bow</name>
+                            </items>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="armour">
+<itemID>0</itemID>
+<name>FullPlate</name>
+<armourPts>8</armourPts>
+<armourType>chest</armourType>
+                            </items>
+                        </inventory>
+                        <dexterity>15</dexterity>
+                        <wisdom>11</wisdom>
+                    </enemy>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>21</key>
+                <value>
+                    <location>21</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>22</key>
+                <value>
+                    <location>22</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>30</key>
+                <value>
+                    <location>30</location>
+                    <endTile>true</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+        </pathMap>
+        <userLocation>
+            <entry>
+                <key>0</key>
+                <value>10</value>
+            </entry>
+            <entry>
+                <key>1</key>
+                <value>1</value>
+            </entry>
+            <entry>
+                <key>2</key>
+                <value>9</value>
+            </entry>
+        </userLocation>
+        <rows>7</rows>
+        <columns>8</columns>
+    </mapList>
+    <mapList>
+        <mapName>Testingfunc2</mapName>
+        <pathMap>
+            <entry>
+                <key>1</key>
+                <value>
+                    <location>1</location>
+                    <player>
+                        <type>Nimble</type>
+                        <imagePath>Hero1.gif</imagePath>
+                        <name>Akash3</name>
+                        <health>20</health>
+                        <constitutionModifier>3</constitutionModifier>
+                        <strengthModifier>1</strengthModifier>
+                        <dexterityModifier>3</dexterityModifier>
+                        <level>1</level>
+                        <strength>13</strength>
+                        <constitution>16</constitution>
+                        <intelligence>10</intelligence>
+                        <charisma>15</charisma>
+                        <vitality>0</vitality>
+                        <inventory>
+                            <equippedWeapon>
+<itemID>0</itemID>
+<weaponType>Melee Weapon</weaponType>
+<attackRange>1</attackRange>
+<attackPts>5</attackPts>
+<name>Short Sword</name>
+                            </equippedWeapon>
+                            <shield>
+<itemID>0</itemID>
+<name>TowerShield</name>
+<armourPts>4</armourPts>
+<armourType>shield</armourType>
+                            </shield>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+<itemID>0</itemID>
+<weaponType>Ranged Weapon</weaponType>
+<attackRange>2</attackRange>
+<attackPts>5</attackPts>
+<name>Long Bow</name>
+                            </items>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="armour">
+<itemID>0</itemID>
+<name>FullPlate</name>
+<armourPts>8</armourPts>
+<armourType>chest</armourType>
+                            </items>
+                        </inventory>
+                        <dexterity>17</dexterity>
+                        <wisdom>12</wisdom>
+                    </player>
+                    <endTile>false</endTile>
+                    <startTile>true</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>2</key>
+                <value>
+                    <location>2</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>9</key>
+                <value>
+                    <location>9</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>10</key>
+                <value>
+                    <location>10</location>
+                    <player>
+                        <type>Nimble</type>
+                        <imagePath>Hero1.gif</imagePath>
+                        <name>Akash2</name>
+                        <health>26</health>
+                        <constitutionModifier>3</constitutionModifier>
+                        <strengthModifier>1</strengthModifier>
+                        <dexterityModifier>3</dexterityModifier>
+                        <level>3</level>
+                        <strength>13</strength>
+                        <constitution>16</constitution>
+                        <intelligence>10</intelligence>
+                        <charisma>15</charisma>
+                        <vitality>0</vitality>
+                        <inventory>
+                            <equippedWeapon>
+<itemID>0</itemID>
+<weaponType>Melee Weapon</weaponType>
+<attackRange>1</attackRange>
+<attackPts>5</attackPts>
+<name>Short Sword</name>
+                            </equippedWeapon>
+                            <shield>
+<itemID>0</itemID>
+<name>TowerShield</name>
+<armourPts>4</armourPts>
+<armourType>shield</armourType>
+                            </shield>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+<itemID>0</itemID>
+<weaponType>Ranged Weapon</weaponType>
+<attackRange>2</attackRange>
+<attackPts>5</attackPts>
+<name>Long Bow</name>
+                            </items>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="armour">
+<itemID>0</itemID>
+<name>FullPlate</name>
+<armourPts>8</armourPts>
+<armourType>chest</armourType>
+                            </items>
+                        </inventory>
+                        <dexterity>17</dexterity>
+                        <wisdom>12</wisdom>
+                    </player>
+                    <endTile>false</endTile>
+                    <startTile>true</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>18</key>
+                <value>
+                    <location>18</location>
+                    <player>
+                        <type>Nimble</type>
+                        <imagePath>Hero2.gif</imagePath>
+                        <name>Hero</name>
+                        <health>32</health>
+                        <constitutionModifier>4</constitutionModifier>
+                        <strengthModifier>3</strengthModifier>
+                        <dexterityModifier>5</dexterityModifier>
+                        <level>3</level>
+                        <strength>17</strength>
+                        <constitution>18</constitution>
+                        <intelligence>12</intelligence>
+                        <charisma>14</charisma>
+                        <vitality>0</vitality>
+                        <inventory>
+                            <equippedWeapon>
+<itemID>0</itemID>
+<weaponType>Melee Weapon</weaponType>
+<attackRange>1</attackRange>
+<attackPts>10</attackPts>
+<name>Long Sword</name>
+                            </equippedWeapon>
+                            <shield>
+<itemID>0</itemID>
+<name>Buckler</name>
+<armourPts>1</armourPts>
+<armourType>shield</armourType>
+                            </shield>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+<itemID>0</itemID>
+<weaponType>Ranged Weapon</weaponType>
+<attackRange>2</attackRange>
+<attackPts>5</attackPts>
+<name>Long Bow</name>
+                            </items>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="armour">
+<itemID>0</itemID>
+<name>Chain Shirt</name>
+<armourPts>4</armourPts>
+<armourType>chest</armourType>
+                            </items>
+                        </inventory>
+                        <dexterity>21</dexterity>
+                        <wisdom>13</wisdom>
+                    </player>
+                    <endTile>false</endTile>
+                    <startTile>true</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>19</key>
+                <value>
+                    <location>19</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>20</key>
+                <value>
+                    <location>20</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>21</key>
+                <value>
+                    <location>21</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>22</key>
+                <value>
+                    <location>22</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>30</key>
+                <value>
+                    <location>30</location>
+                    <endTile>true</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+        </pathMap>
+        <userLocation>
+            <entry>
+                <key>0</key>
+                <value>1</value>
+            </entry>
+            <entry>
+                <key>1</key>
+                <value>18</value>
+            </entry>
+            <entry>
+                <key>2</key>
+                <value>10</value>
+            </entry>
+        </userLocation>
+        <rows>7</rows>
+        <columns>8</columns>
+    </mapList>
+    <mapList>
+        <mapName>Testing678</mapName>
+        <pathMap>
+            <entry>
+                <key>1</key>
+                <value>
+                    <location>1</location>
+                    <player>
+                        <type>Nimble</type>
+                        <imagePath>Hero1.gif</imagePath>
+                        <name>Akash3</name>
+                        <health>25</health>
+                        <constitutionModifier>3</constitutionModifier>
+                        <strengthModifier>1</strengthModifier>
+                        <dexterityModifier>3</dexterityModifier>
+                        <level>3</level>
+                        <strength>13</strength>
+                        <constitution>16</constitution>
+                        <intelligence>10</intelligence>
+                        <charisma>15</charisma>
+                        <vitality>0</vitality>
+                        <inventory>
+                            <equippedWeapon>
+<itemID>0</itemID>
+<weaponType>Melee Weapon</weaponType>
+<attackRange>1</attackRange>
+<attackPts>5</attackPts>
+<name>Short Sword</name>
+                            </equippedWeapon>
+                            <shield>
+<itemID>0</itemID>
+<name>TowerShield</name>
+<armourPts>4</armourPts>
+<armourType>shield</armourType>
+                            </shield>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+<itemID>0</itemID>
+<weaponType>Ranged Weapon</weaponType>
+<attackRange>2</attackRange>
+<attackPts>5</attackPts>
+<name>Long Bow</name>
+                            </items>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="armour">
+<itemID>0</itemID>
+<name>FullPlate</name>
+<armourPts>8</armourPts>
+<armourType>chest</armourType>
+                            </items>
+                        </inventory>
+                        <dexterity>17</dexterity>
+                        <wisdom>12</wisdom>
+                    </player>
+                    <endTile>false</endTile>
+                    <startTile>true</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>2</key>
+                <value>
+                    <location>2</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>8</key>
+                <value>
+                    <location>8</location>
+                    <player>
+                        <type>Nimble</type>
+                        <imagePath>Hero2.gif</imagePath>
+                        <name>Hero2</name>
+                        <health>20</health>
+                        <constitutionModifier>4</constitutionModifier>
+                        <strengthModifier>3</strengthModifier>
+                        <dexterityModifier>5</dexterityModifier>
+                        <level>1</level>
+                        <strength>17</strength>
+                        <constitution>18</constitution>
+                        <intelligence>12</intelligence>
+                        <charisma>14</charisma>
+                        <vitality>0</vitality>
+                        <inventory>
+                            <equippedWeapon>
+<itemID>0</itemID>
+<weaponType>Melee Weapon</weaponType>
+<attackRange>1</attackRange>
+<attackPts>10</attackPts>
+<name>Long Sword</name>
+                            </equippedWeapon>
+                            <shield>
+<itemID>0</itemID>
+<name>Buckler</name>
+<armourPts>1</armourPts>
+<armourType>shield</armourType>
+                            </shield>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+<itemID>0</itemID>
+<weaponType>Ranged Weapon</weaponType>
+<attackRange>2</attackRange>
+<attackPts>5</attackPts>
+<name>Long Bow</name>
+                            </items>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="armour">
+<itemID>0</itemID>
+<name>Chain Shirt</name>
+<armourPts>4</armourPts>
+<armourType>chest</armourType>
+                            </items>
+                        </inventory>
+                        <dexterity>21</dexterity>
+                        <wisdom>13</wisdom>
+                    </player>
+                    <endTile>false</endTile>
+                    <startTile>true</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>9</key>
+                <value>
+                    <location>9</location>
+                    <player>
+                        <type>Nimble</type>
+                        <imagePath>Hero2.gif</imagePath>
+                        <name>Hero</name>
+                        <health>20</health>
+                        <constitutionModifier>4</constitutionModifier>
+                        <strengthModifier>3</strengthModifier>
+                        <dexterityModifier>5</dexterityModifier>
+                        <level>1</level>
+                        <strength>17</strength>
+                        <constitution>18</constitution>
+                        <intelligence>12</intelligence>
+                        <charisma>14</charisma>
+                        <vitality>0</vitality>
+                        <inventory>
+                            <equippedWeapon>
+<itemID>0</itemID>
+<weaponType>Melee Weapon</weaponType>
+<attackRange>1</attackRange>
+<attackPts>10</attackPts>
+<name>Long Sword</name>
+                            </equippedWeapon>
+                            <shield>
+<itemID>0</itemID>
+<name>Buckler</name>
+<armourPts>1</armourPts>
+<armourType>shield</armourType>
+                            </shield>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+<itemID>0</itemID>
+<weaponType>Ranged Weapon</weaponType>
+<attackRange>2</attackRange>
+<attackPts>5</attackPts>
+<name>Long Bow</name>
+                            </items>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="armour">
+<itemID>0</itemID>
+<name>Chain Shirt</name>
+<armourPts>4</armourPts>
+<armourType>chest</armourType>
+                            </items>
+                        </inventory>
+                        <dexterity>21</dexterity>
+                        <wisdom>13</wisdom>
+                    </player>
+                    <endTile>false</endTile>
+                    <startTile>true</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>16</key>
+                <value>
+                    <location>16</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>17</key>
+                <value>
+                    <location>17</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>23</key>
+                <value>
+                    <location>23</location>
+                    <enemy>
+                        <type>Tank</type>
+                        <imagePath>monster3.gif</imagePath>
+                        <name>TerribleAkash</name>
+                        <health>10</health>
+                        <constitutionModifier>3</constitutionModifier>
+                        <strengthModifier>0</strengthModifier>
+                        <dexterityModifier>2</dexterityModifier>
+                        <level>1</level>
+                        <strength>10</strength>
+                        <constitution>16</constitution>
+                        <intelligence>13</intelligence>
+                        <charisma>17</charisma>
+                        <vitality>0</vitality>
+                        <inventory>
+                            <equippedWeapon>
+<itemID>0</itemID>
+<weaponType>Melee Weapon</weaponType>
+<attackRange>1</attackRange>
+<attackPts>5</attackPts>
+<name>Short Sword</name>
+                            </equippedWeapon>
+                            <shield>
+<itemID>0</itemID>
+<name>TowerShield</name>
+<armourPts>4</armourPts>
+<armourType>shield</armourType>
+                            </shield>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+<itemID>0</itemID>
+<weaponType>Ranged Weapon</weaponType>
+<attackRange>2</attackRange>
+<attackPts>5</attackPts>
+<name>Long Bow</name>
+                            </items>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="armour">
+<itemID>0</itemID>
+<name>FullPlate</name>
+<armourPts>8</armourPts>
+<armourType>chest</armourType>
+                            </items>
+                        </inventory>
+                        <dexterity>15</dexterity>
+                        <wisdom>11</wisdom>
+                    </enemy>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>24</key>
+                <value>
+                    <location>24</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>30</key>
+                <value>
+                    <location>30</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>31</key>
+                <value>
+                    <location>31</location>
+                    <endTile>true</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+        </pathMap>
+        <userLocation>
+            <entry>
+                <key>0</key>
+                <value>1</value>
+            </entry>
+            <entry>
+                <key>1</key>
+                <value>9</value>
+            </entry>
+            <entry>
+                <key>2</key>
+                <value>8</value>
+            </entry>
+        </userLocation>
+        <rows>7</rows>
+        <columns>7</columns>
+    </mapList>
+    <mapList>
+        <mapName>testing5678</mapName>
+        <pathMap>
+            <entry>
+                <key>1</key>
+                <value>
+                    <location>1</location>
+                    <player>
+                        <type>Nimble</type>
+                        <imagePath>Hero1.gif</imagePath>
+                        <name>Akash3</name>
+                        <health>25</health>
+                        <constitutionModifier>3</constitutionModifier>
+                        <strengthModifier>1</strengthModifier>
+                        <dexterityModifier>3</dexterityModifier>
+                        <level>3</level>
+                        <strength>13</strength>
+                        <constitution>16</constitution>
+                        <intelligence>10</intelligence>
+                        <charisma>15</charisma>
+                        <vitality>0</vitality>
+                        <inventory>
+                            <equippedWeapon>
+<itemID>0</itemID>
+<weaponType>Melee Weapon</weaponType>
+<attackRange>1</attackRange>
+<attackPts>5</attackPts>
+<name>Short Sword</name>
+                            </equippedWeapon>
+                            <shield>
+<itemID>0</itemID>
+<name>TowerShield</name>
+<armourPts>4</armourPts>
+<armourType>shield</armourType>
+                            </shield>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+<itemID>0</itemID>
+<weaponType>Ranged Weapon</weaponType>
+<attackRange>2</attackRange>
+<attackPts>5</attackPts>
+<name>Long Bow</name>
+                            </items>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="armour">
+<itemID>0</itemID>
+<name>FullPlate</name>
+<armourPts>8</armourPts>
+<armourType>chest</armourType>
+                            </items>
+                        </inventory>
+                        <dexterity>17</dexterity>
+                        <wisdom>12</wisdom>
+                    </player>
+                    <endTile>false</endTile>
+                    <startTile>true</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>2</key>
+                <value>
+                    <location>2</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>8</key>
+                <value>
+                    <location>8</location>
+                    <player>
+                        <type>Nimble</type>
+                        <imagePath>Hero2.gif</imagePath>
+                        <name>Hero2</name>
+                        <health>29</health>
+                        <constitutionModifier>4</constitutionModifier>
+                        <strengthModifier>3</strengthModifier>
+                        <dexterityModifier>5</dexterityModifier>
+                        <level>3</level>
+                        <strength>17</strength>
+                        <constitution>18</constitution>
+                        <intelligence>12</intelligence>
+                        <charisma>14</charisma>
+                        <vitality>0</vitality>
+                        <inventory>
+                            <equippedWeapon>
+<itemID>0</itemID>
+<weaponType>Melee Weapon</weaponType>
+<attackRange>1</attackRange>
+<attackPts>10</attackPts>
+<name>Long Sword</name>
+                            </equippedWeapon>
+                            <shield>
+<itemID>0</itemID>
+<name>Buckler</name>
+<armourPts>1</armourPts>
+<armourType>shield</armourType>
+                            </shield>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+<itemID>0</itemID>
+<weaponType>Ranged Weapon</weaponType>
+<attackRange>2</attackRange>
+<attackPts>5</attackPts>
+<name>Long Bow</name>
+                            </items>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="armour">
+<itemID>0</itemID>
+<name>Chain Shirt</name>
+<armourPts>4</armourPts>
+<armourType>chest</armourType>
+                            </items>
+                        </inventory>
+                        <dexterity>21</dexterity>
+                        <wisdom>13</wisdom>
+                    </player>
+                    <endTile>false</endTile>
+                    <startTile>true</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>9</key>
+                <value>
+                    <location>9</location>
+                    <player>
+                        <type>Nimble</type>
+                        <imagePath>Hero2.gif</imagePath>
+                        <name>Hero</name>
+                        <health>20</health>
+                        <constitutionModifier>4</constitutionModifier>
+                        <strengthModifier>3</strengthModifier>
+                        <dexterityModifier>5</dexterityModifier>
+                        <level>1</level>
+                        <strength>17</strength>
+                        <constitution>18</constitution>
+                        <intelligence>12</intelligence>
+                        <charisma>14</charisma>
+                        <vitality>0</vitality>
+                        <inventory>
+                            <equippedWeapon>
+<itemID>0</itemID>
+<weaponType>Melee Weapon</weaponType>
+<attackRange>1</attackRange>
+<attackPts>10</attackPts>
+<name>Long Sword</name>
+                            </equippedWeapon>
+                            <shield>
+<itemID>0</itemID>
+<name>Buckler</name>
+<armourPts>1</armourPts>
+<armourType>shield</armourType>
+                            </shield>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+<itemID>0</itemID>
+<weaponType>Ranged Weapon</weaponType>
+<attackRange>2</attackRange>
+<attackPts>5</attackPts>
+<name>Long Bow</name>
+                            </items>
+                            <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="armour">
+<itemID>0</itemID>
+<name>Chain Shirt</name>
+<armourPts>4</armourPts>
+<armourType>chest</armourType>
+                            </items>
+                        </inventory>
+                        <dexterity>21</dexterity>
+                        <wisdom>13</wisdom>
+                    </player>
+                    <endTile>false</endTile>
+                    <startTile>true</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>16</key>
+                <value>
+                    <location>16</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>17</key>
+                <value>
+                    <location>17</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>23</key>
+                <value>
+                    <location>23</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>24</key>
+                <value>
+                    <location>24</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>30</key>
+                <value>
+                    <location>30</location>
+                    <endTile>false</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+            <entry>
+                <key>31</key>
+                <value>
+                    <location>31</location>
+                    <endTile>true</endTile>
+                    <startTile>false</startTile>
+                </value>
+            </entry>
+        </pathMap>
+        <userLocation>
+            <entry>
+                <key>0</key>
+                <value>1</value>
+            </entry>
+            <entry>
+                <key>1</key>
+                <value>9</value>
+            </entry>
+            <entry>
+                <key>2</key>
+                <value>8</value>
+            </entry>
+        </userLocation>
+        <rows>7</rows>
+        <columns>7</columns>
+    </mapList>
+</Map>

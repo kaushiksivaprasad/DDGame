@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<characters>
+    <character>
+        <character>
+            <type>Bully</type>
+            <imagePath>monster1.gif</imagePath>
+            <name>Akash</name>
+            <health>10</health>
+            <constitutionModifier>2</constitutionModifier>
+            <strengthModifier>3</strengthModifier>
+            <dexterityModifier>0</dexterityModifier>
+            <level>2</level>
+            <strength>16</strength>
+            <constitution>14</constitution>
+            <intelligence>12</intelligence>
+            <charisma>9</charisma>
+            <vitality>0</vitality>
+            <inventory>
+                <equippedWeapon>
+                    <itemID>0</itemID>
+                    <weaponType>Melee Weapon</weaponType>
+                    <attackRange>1</attackRange>
+                    <attackPts>5</attackPts>
+                    <name>Short Sword</name>
+                </equippedWeapon>
+                <chest>
+                    <itemID>0</itemID>
+                    <name>FullPlate</name>
+                    <armourPts>8</armourPts>
+                    <armourType>chest</armourType>
+                </chest>
+                <shield>
+                    <itemID>0</itemID>
+                    <name>TowerShield</name>
+                    <armourPts>4</armourPts>
+                    <armourType>shield</armourType>
+                </shield>
+                <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+                    <itemID>0</itemID>
+                    <weaponType>Ranged Weapon</weaponType>
+                    <attackRange>2</attackRange>
+                    <attackPts>5</attackPts>
+                    <name>Long Bow</name>
+                </items>
+            </inventory>
+            <dexterity>11</dexterity>
+            <wisdom>17</wisdom>
+        </character>
+        <character>
+            <type>Bully</type>
+            <imagePath>monster1.gif</imagePath>
+            <name>D</name>
+            <health>10</health>
+            <constitutionModifier>2</constitutionModifier>
+            <strengthModifier>4</strengthModifier>
+            <dexterityModifier>0</dexterityModifier>
+            <level>2</level>
+            <strength>18</strength>
+            <constitution>15</constitution>
+            <intelligence>13</intelligence>
+            <charisma>7</charisma>
+            <vitality>0</vitality>
+            <inventory>
+                <equippedWeapon>
+                    <itemID>0</itemID>
+                    <weaponType>Melee Weapon</weaponType>
+                    <attackRange>1</attackRange>
+                    <attackPts>5</attackPts>
+                    <name>Short Sword</name>
+                </equippedWeapon>
+                <chest>
+                    <itemID>0</itemID>
+                    <name>FullPlate</name>
+                    <armourPts>8</armourPts>
+                    <armourType>chest</armourType>
+                </chest>
+                <shield>
+                    <itemID>0</itemID>
+                    <name>TowerShield</name>
+                    <armourPts>4</armourPts>
+                    <armourType>shield</armourType>
+                </shield>
+                <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+                    <itemID>0</itemID>
+                    <weaponType>Ranged Weapon</weaponType>
+                    <attackRange>2</attackRange>
+                    <attackPts>5</attackPts>
+                    <name>Long Bow</name>
+                </items>
+            </inventory>
+            <dexterity>11</dexterity>
+            <wisdom>17</wisdom>
+        </character>
+        <character>
+            <type>Bully</type>
+            <imagePath>monster1.gif</imagePath>
+            <name>Q</name>
+            <health>10</health>
+            <constitutionModifier>2</constitutionModifier>
+            <strengthModifier>4</strengthModifier>
+            <dexterityModifier>0</dexterityModifier>
+            <level>2</level>
+            <strength>18</strength>
+            <constitution>15</constitution>
+            <intelligence>13</intelligence>
+            <charisma>7</charisma>
+            <vitality>0</vitality>
+            <inventory>
+                <equippedWeapon>
+                    <itemID>0</itemID>
+                    <weaponType>Melee Weapon</weaponType>
+                    <attackRange>1</attackRange>
+                    <attackPts>5</attackPts>
+                    <name>Short Sword</name>
+                </equippedWeapon>
+                <chest>
+                    <itemID>0</itemID>
+                    <name>FullPlate</name>
+                    <armourPts>8</armourPts>
+                    <armourType>chest</armourType>
+                </chest>
+                <shield>
+                    <itemID>0</itemID>
+                    <name>TowerShield</name>
+                    <armourPts>4</armourPts>
+                    <armourType>shield</armourType>
+                </shield>
+                <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+                    <itemID>0</itemID>
+                    <weaponType>Ranged Weapon</weaponType>
+                    <attackRange>2</attackRange>
+                    <attackPts>5</attackPts>
+                    <name>Long Bow</name>
+                </items>
+            </inventory>
+            <dexterity>11</dexterity>
+            <wisdom>17</wisdom>
+        </character>
+        <character>
+            <type>Tank</type>
+            <imagePath>monster2.gif</imagePath>
+            <name>z</name>
+            <health>10</health>
+            <constitutionModifier>-1</constitutionModifier>
+            <strengthModifier>0</strengthModifier>
+            <dexterityModifier>1</dexterityModifier>
+            <level>3</level>
+            <strength>10</strength>
+            <constitution>9</constitution>
+            <intelligence>8</intelligence>
+            <charisma>20</charisma>
+            <vitality>0</vitality>
+            <inventory>
+                <equippedWeapon>
+                    <itemID>0</itemID>
+                    <weaponType>Melee Weapon</weaponType>
+                    <attackRange>1</attackRange>
+                    <attackPts>5</attackPts>
+                    <name>Short Sword</name>
+                </equippedWeapon>
+                <chest>
+                    <itemID>0</itemID>
+                    <name>FullPlate</name>
+                    <armourPts>8</armourPts>
+                    <armourType>chest</armourType>
+                </chest>
+                <shield>
+                    <itemID>0</itemID>
+                    <name>TowerShield</name>
+                    <armourPts>4</armourPts>
+                    <armourType>shield</armourType>
+                </shield>
+                <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+                    <itemID>0</itemID>
+                    <weaponType>Ranged Weapon</weaponType>
+                    <attackRange>2</attackRange>
+                    <attackPts>5</attackPts>
+                    <name>Long Bow</name>
+                </items>
+            </inventory>
+            <dexterity>13</dexterity>
+            <wisdom>17</wisdom>
+        </character>
+        <character>
+            <type>Tank</type>
+            <imagePath>monster3.gif</imagePath>
+            <name>TerribleAkash</name>
+            <health>10</health>
+            <constitutionModifier>3</constitutionModifier>
+            <strengthModifier>0</strengthModifier>
+            <dexterityModifier>2</dexterityModifier>
+            <level>2</level>
+            <strength>10</strength>
+            <constitution>16</constitution>
+            <intelligence>13</intelligence>
+            <charisma>17</charisma>
+            <vitality>0</vitality>
+            <inventory>
+                <equippedWeapon>
+                    <itemID>0</itemID>
+                    <weaponType>Melee Weapon</weaponType>
+                    <attackRange>1</attackRange>
+                    <attackPts>5</attackPts>
+                    <name>Short Sword</name>
+                </equippedWeapon>
+                <chest>
+                    <itemID>0</itemID>
+                    <name>FullPlate</name>
+                    <armourPts>8</armourPts>
+                    <armourType>chest</armourType>
+                </chest>
+                <shield>
+                    <itemID>0</itemID>
+                    <name>TowerShield</name>
+                    <armourPts>4</armourPts>
+                    <armourType>shield</armourType>
+                </shield>
+                <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+                    <itemID>0</itemID>
+                    <weaponType>Ranged Weapon</weaponType>
+                    <attackRange>2</attackRange>
+                    <attackPts>5</attackPts>
+                    <name>Long Bow</name>
+                </items>
+            </inventory>
+            <dexterity>15</dexterity>
+            <wisdom>11</wisdom>
+        </character>
+        <character>
+            <type>Tank</type>
+            <imagePath>monster3.gif</imagePath>
+            <name>MonsterAkash</name>
+            <health>10</health>
+            <constitutionModifier>3</constitutionModifier>
+            <strengthModifier>0</strengthModifier>
+            <dexterityModifier>2</dexterityModifier>
+            <level>2</level>
+            <strength>10</strength>
+            <constitution>16</constitution>
+            <intelligence>13</intelligence>
+            <charisma>17</charisma>
+            <vitality>0</vitality>
+            <inventory>
+                <equippedWeapon>
+                    <itemID>0</itemID>
+                    <weaponType>Melee Weapon</weaponType>
+                    <attackRange>1</attackRange>
+                    <attackPts>5</attackPts>
+                    <name>Short Sword</name>
+                </equippedWeapon>
+                <chest>
+                    <itemID>0</itemID>
+                    <name>FullPlate</name>
+                    <armourPts>8</armourPts>
+                    <armourType>chest</armourType>
+                </chest>
+                <shield>
+                    <itemID>0</itemID>
+                    <name>TowerShield</name>
+                    <armourPts>4</armourPts>
+                    <armourType>shield</armourType>
+                </shield>
+                <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+                    <itemID>0</itemID>
+                    <weaponType>Ranged Weapon</weaponType>
+                    <attackRange>2</attackRange>
+                    <attackPts>5</attackPts>
+                    <name>Long Bow</name>
+                </items>
+            </inventory>
+            <dexterity>15</dexterity>
+            <wisdom>11</wisdom>
+        </character>
+        <character>
+            <type>Tank</type>
+            <imagePath>monster3.gif</imagePath>
+            <name>MonsterMan</name>
+            <health>10</health>
+            <constitutionModifier>4</constitutionModifier>
+            <strengthModifier>3</strengthModifier>
+            <dexterityModifier>2</dexterityModifier>
+            <level>2</level>
+            <strength>16</strength>
+            <constitution>18</constitution>
+            <intelligence>17</intelligence>
+            <charisma>13</charisma>
+            <vitality>0</vitality>
+            <inventory>
+                <equippedWeapon>
+                    <itemID>0</itemID>
+                    <weaponType>Melee Weapon</weaponType>
+                    <attackRange>1</attackRange>
+                    <attackPts>5</attackPts>
+                    <name>Short Sword</name>
+                </equippedWeapon>
+                <chest>
+                    <itemID>0</itemID>
+                    <name>FullPlate</name>
+                    <armourPts>8</armourPts>
+                    <armourType>chest</armourType>
+                </chest>
+                <shield>
+                    <itemID>0</itemID>
+                    <name>TowerShield</name>
+                    <armourPts>4</armourPts>
+                    <armourType>shield</armourType>
+                </shield>
+                <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+                    <itemID>0</itemID>
+                    <weaponType>Ranged Weapon</weaponType>
+                    <attackRange>2</attackRange>
+                    <attackPts>5</attackPts>
+                    <name>Long Bow</name>
+                </items>
+            </inventory>
+            <dexterity>15</dexterity>
+            <wisdom>19</wisdom>
+        </character>
+    </character>
+</characters>

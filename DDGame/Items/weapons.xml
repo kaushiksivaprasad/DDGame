@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<items>
+    <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+        <weaponType>Melee Weapon</weaponType>
+        <attackRange>1</attackRange>
+        <attackPts>5</attackPts>
+        <name>Short Sword</name>
+    </item>
+    <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+        <weaponType>Ranged Weapon</weaponType>
+        <attackRange>2</attackRange>
+        <attackPts>5</attackPts>
+        <name>Long Bow</name>
+    </item>
+    <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+        <weaponType>Melee Weapon</weaponType>
+        <attackRange>1</attackRange>
+        <attackPts>10</attackPts>
+        <name>Long Sword</name>
+    </item>
+</items>
