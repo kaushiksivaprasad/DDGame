@@ -19,7 +19,22 @@ public abstract class Item {
     private int constitutionModifier;
     private int charismaModifer;
     private int dexterityModifer;
-    public int getItemID(){
+    private int armourPts;
+    private String modifier = null;
+    
+    public int getArmourPts() {
+		return armourPts;
+	}
+	public void setArmourPts(int armourPts) {
+		this.armourPts = armourPts;
+	}
+	public String getModifier() {
+		return modifier;
+	}
+	public void setModifier(String modifier) {
+		this.modifier = modifier;
+	}
+	public int getItemID(){
         return itemID;
     }
     public void setItemID(int itemID){
