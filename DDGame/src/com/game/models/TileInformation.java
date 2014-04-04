@@ -17,7 +17,6 @@ import javax.xml.bind.annotation.XmlAccessorType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 public class TileInformation {
-	private boolean chest = false;
     private int location;
     private GameCharacter enemy;
     private Player player;
@@ -28,16 +27,8 @@ public class TileInformation {
     private Weapon weapon;
     private boolean endTile;
     private boolean startTile;
-    
-    public boolean isChest() {
-		return chest;
-	}
 
-	public void setChest(boolean chest) {
-		this.chest = chest;
-	}
-
-	public int getLocation() {
+    public int getLocation() {
         return location;
     }
 

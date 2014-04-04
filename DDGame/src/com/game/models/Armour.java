@@ -17,6 +17,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Armour extends Item{
     private String name;
+    private int armourPts;
     private String armourType; 
     
     public String getName() {
@@ -26,6 +27,15 @@ public class Armour extends Item{
     public void setName(String name) {
         this.name = name;
     }
+
+    public int getArmourPts() {
+        return armourPts;
+    }
+
+    public void setArmourPts(int armourPts) {
+        this.armourPts = armourPts;
+    }
+    
     public String getArmourType() {
         return armourType;
     }
