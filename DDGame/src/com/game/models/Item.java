@@ -13,53 +13,10 @@ package com.game.models;
  */
 public abstract class Item {
     private int itemID;
-    private int intelligenceModifier;
-    private int wisdomModifier;
-    private int strengthModifer;
-    private int constitutionModifier;
-    private int charismaModifer;
-    private int dexterityModifer;
     public int getItemID(){
         return itemID;
     }
     public void setItemID(int itemID){
         this.itemID = itemID;
     }
-	public int getIntelligenceModifier() {
-		return intelligenceModifier;
-	}
-	public void setIntelligenceModifier(int intelligenceModifier) {
-		this.intelligenceModifier = intelligenceModifier;
-	}
-	public int getWisdomModifier() {
-		return wisdomModifier;
-	}
-	public void setWisdomModifier(int wisdomModifier) {
-		this.wisdomModifier = wisdomModifier;
-	}
-	public int getStrengthModifer() {
-		return strengthModifer;
-	}
-	public void setStrengthModifer(int strengthModifer) {
-		this.strengthModifer = strengthModifer;
-	}
-	public int getConstitutionModifier() {
-		return constitutionModifier;
-	}
-	public void setConstitutionModifier(int constitutionModifier) {
-		this.constitutionModifier = constitutionModifier;
-	}
-	public int getCharismaModifer() {
-		return charismaModifer;
-	}
-	public void setCharismaModifer(int charismaModifer) {
-		this.charismaModifer = charismaModifer;
-	}
-	public int getDexterityModifer() {
-		return dexterityModifer;
-	}
-	public void setDexterityModifer(int dexterityModifer) {
-		this.dexterityModifer = dexterityModifer;
-	}
-    
 }
