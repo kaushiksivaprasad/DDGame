@@ -392,6 +392,20 @@ public class InventoryPanel extends JDialog implements ActionListener{
         return Information;
     }
     
+    public String makingInformationForCharacter(){
+    	String result = null;
+    	
+    	StringBuilder SB = new StringBuilder();
+    	SB.append("Strength: ");
+    	SB.append("Constitution: ");
+    	SB.append("Dexterity: ");
+    	SB.append("Intelligence: ");
+    	SB.append("Charisma: ");
+    	SB.append("Wisdom: ");
+    	
+    	return result;
+    }
+    
     /**
      * this method is put all itmes of CharacterInventory into an arrylist of itme
      */
