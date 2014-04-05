@@ -1,39 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <items>
-    <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="armour">
+    <armour>
+        <name>Useless</name>
         <itemID>0</itemID>
-        <name>TowerShield</name>
-        <armourPts>4</armourPts>
-        <armourType>shield</armourType>
-    </item>
-    <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="armour">
-        <itemID>0</itemID>
-        <name>FullPlate</name>
-        <armourPts>8</armourPts>
-        <armourType>chest</armourType>
-    </item>
-    <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="armour">
-        <itemID>0</itemID>
-        <name>Chain Shirt</name>
-        <armourPts>4</armourPts>
-        <armourType>chest</armourType>
-    </item>
-    <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="armour">
-        <itemID>0</itemID>
-        <name>Breast Plate</name>
-        <armourPts>5</armourPts>
-        <armourType>chest</armourType>
-    </item>
-    <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="armour">
-        <itemID>0</itemID>
-        <name>Buckler</name>
+        <intelligenceModifier>0</intelligenceModifier>
+        <wisdomModifier>0</wisdomModifier>
+        <strengthModifer>0</strengthModifer>
+        <constitutionModifier>0</constitutionModifier>
+        <charismaModifer>0</charismaModifer>
+        <dexterityModifer>0</dexterityModifer>
         <armourPts>1</armourPts>
-        <armourType>shield</armourType>
-    </item>
-    <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="armour">
-        <itemID>0</itemID>
-        <name>Heavy Shield</name>
-        <armourPts>1</armourPts>
-        <armourType>shield</armourType>
-    </item>
+        <armourType>chest</armourType>
+    </armour>
 </items>

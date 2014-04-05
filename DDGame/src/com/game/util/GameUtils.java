@@ -165,7 +165,7 @@ public class GameUtils {
     public static ArrayList<Item> getAllItems(String fileName) throws JAXBException, Exception {
         ArrayList<Item> itemList = null;
         try {
-            JAXBContext context = JAXBContext.newInstance(ItemWrapper.class);
+            JAXBContext context = JAXBContext.newInstance(ItemWrapper.class,Ring.class,Weapon.class,Armour.class,Treasure.class,Potion.class);
             Unmarshaller um = context.createUnmarshaller();
             ItemWrapper wrapper = (ItemWrapper) um.unmarshal(new File(fileName));
             itemList = wrapper.getItem();
@@ -213,7 +213,7 @@ public class GameUtils {
         ItemWrapper wrapper = new ItemWrapper();
         wrapper.setItem(items);
         try {
-            JAXBContext context = JAXBContext.newInstance(ItemWrapper.class);
+            JAXBContext context = JAXBContext.newInstance(ItemWrapper.class,Item.class,Ring.class,Weapon.class,Armour.class,Treasure.class,Potion.class);
             Marshaller m = context.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
             m.marshal(wrapper, new File(fileName));

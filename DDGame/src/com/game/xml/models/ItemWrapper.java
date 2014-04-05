@@ -6,17 +6,14 @@
 
 package com.game.xml.models;
 
-import com.game.models.Armour;
-import com.game.models.Item;
-import com.game.models.Potion;
-import com.game.models.Ring;
-import com.game.models.Treasure;
-import com.game.models.Weapon;
 import java.util.ArrayList;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSeeAlso;
+
+import com.game.models.Item;
 
 /**
  *
@@ -24,8 +21,8 @@ import javax.xml.bind.annotation.XmlSeeAlso;
  */
 @XmlRootElement(name = "items")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlSeeAlso({Ring.class, Potion.class, Treasure.class, Weapon.class, Armour.class})
 public class ItemWrapper {
+	@XmlElementRef
     public ArrayList<Item> item = new ArrayList<Item>();
 
     public ArrayList<Item> getItem() {

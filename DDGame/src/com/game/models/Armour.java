@@ -8,12 +8,14 @@ package com.game.models;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * This class has all the characteristics of an armour.. This class is a bean
  * class and hence it has getters and setters..
  * @author Kaushik
  */
+@XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Armour extends Item{
     private String armourType; 

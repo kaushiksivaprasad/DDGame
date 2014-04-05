@@ -8,6 +8,7 @@ package com.game.models;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * This class has all the characteristics of a potion.. This class is a bean
@@ -15,6 +16,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
  *
  * @author Kaushik
  */
+@XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Potion extends Item{
     private int potionPts;

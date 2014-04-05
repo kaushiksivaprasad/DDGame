@@ -1,27 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <items>
-    <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ring">
-        <name>Gold Ring1</name>
+    <ring>
+        <name>fuckuring</name>
+        <itemID>0</itemID>
+        <intelligenceModifier>0</intelligenceModifier>
+        <wisdomModifier>0</wisdomModifier>
+        <strengthModifer>0</strengthModifer>
+        <constitutionModifier>0</constitutionModifier>
+        <charismaModifer>0</charismaModifer>
+        <dexterityModifer>0</dexterityModifer>
+        <armourPts>0</armourPts>
         <incHealth>1</incHealth>
         <incArmour>1</incArmour>
         <incAttack>1</incAttack>
-    </item>
-    <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ring">
-        <name>Bronze Ring</name>
-        <incHealth>1</incHealth>
-        <incArmour>0</incArmour>
-        <incAttack>1</incAttack>
-    </item>
-    <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ring">
-        <name>Gold Ring</name>
-        <incHealth>1</incHealth>
-        <incArmour>1</incArmour>
-        <incAttack>1</incAttack>
-    </item>
-    <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ring">
-        <name>Silver Ring</name>
-        <incHealth>0</incHealth>
-        <incArmour>0</incArmour>
-        <incAttack>2</incAttack>
-    </item>
+    </ring>
 </items>

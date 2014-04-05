@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <items>
-    <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="treasure">
-        <name>Large Loot</name>
-        <value>70</value>
-    </item>
+    <treasure>
+        <name>large shit</name>
+        <itemID>0</itemID>
+        <intelligenceModifier>0</intelligenceModifier>
+        <wisdomModifier>0</wisdomModifier>
+        <strengthModifer>0</strengthModifer>
+        <constitutionModifier>0</constitutionModifier>
+        <charismaModifer>0</charismaModifer>
+        <dexterityModifer>0</dexterityModifer>
+        <armourPts>0</armourPts>
+        <value>121</value>
+    </treasure>
 </items>

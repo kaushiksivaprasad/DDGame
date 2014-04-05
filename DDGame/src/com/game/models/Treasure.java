@@ -8,6 +8,7 @@ package com.game.models;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * This class has all the characteristics of a treasure.. This class is a bean class
@@ -15,20 +16,11 @@ import javax.xml.bind.annotation.XmlAccessorType;
  *
  * @author Kaushik
  */
+@XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Treasure extends Item
 {
-    private String name;
     private int value;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getValue() {
         return value;
     }

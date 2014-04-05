@@ -6,13 +6,19 @@
 
 package com.game.models;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+
 /**
  * This Abstract class is used by all the different classes such as Weapon, Armour
  * Potion, Ring, Treasure..
  * @author Kaushik
  */
-public abstract class Item {
-	private String name;
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Item {
+	@XmlElement(required = true)
+	private String name = null;
     private int itemID;
     private int intelligenceModifier;
     private int wisdomModifier;

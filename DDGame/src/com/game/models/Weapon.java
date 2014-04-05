@@ -6,9 +6,9 @@
 
 package com.game.models;
 
-import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * This class has all the characteristics of a Weapon.. This class is a bean class
@@ -16,31 +16,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
  *
  * @author Kaushik
  */
+@XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Weapon extends Item
 {
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 83 * hash + Objects.hashCode(getName());
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Weapon other = (Weapon) obj;
-        if (!Objects.equals(getName(), other.getName())) {
-            return false;
-        }
-        return true;
-    }
     private String weaponType;
     private int attackRange;
     private int attackPts;

@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <items>
-    <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
+    <weapon>
+        <name>Test26</name>
+        <itemID>0</itemID>
+        <intelligenceModifier>0</intelligenceModifier>
+        <wisdomModifier>0</wisdomModifier>
+        <strengthModifer>0</strengthModifer>
+        <constitutionModifier>0</constitutionModifier>
+        <charismaModifer>0</charismaModifer>
+        <dexterityModifer>0</dexterityModifer>
+        <armourPts>0</armourPts>
         <weaponType>Melee Weapon</weaponType>
         <attackRange>1</attackRange>
-        <attackPts>5</attackPts>
-        <name>Short Sword</name>
-    </item>
-    <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
-        <weaponType>Ranged Weapon</weaponType>
-        <attackRange>2</attackRange>
-        <attackPts>5</attackPts>
-        <name>Long Bow</name>
-    </item>
-    <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="weapon">
-        <weaponType>Melee Weapon</weaponType>
-        <attackRange>1</attackRange>
-        <attackPts>10</attackPts>
-        <name>Long Sword</name>
-    </item>
+        <attackPts>1</attackPts>
+    </weapon>
 </items>
