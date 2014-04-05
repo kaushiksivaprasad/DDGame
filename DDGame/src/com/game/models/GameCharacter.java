@@ -28,6 +28,9 @@ public class GameCharacter {
     private int constitutionModifier ;
     private int strengthModifier ;
     private int dexterityModifier ;
+    private int intelligenceModifier;
+    private int charismaModifier;
+    private int wisdomModifier;
     private int level;
     private int strength;
     private int constitution;
@@ -37,6 +40,31 @@ public class GameCharacter {
     private Inventory inventory;
     private int dexterity;
     private int wisdom;
+    
+    public int getIntelligenceModifier() {
+		return intelligenceModifier;
+	}
+
+	public void setIntelligenceModifier(int intelligenceModifier) {
+		this.intelligenceModifier = intelligenceModifier;
+	}
+
+	public int getCharismaModifier() {
+		return charismaModifier;
+	}
+
+	public void setCharismaModifier(int charismaModifier) {
+		this.charismaModifier = charismaModifier;
+	}
+
+	public int getWisdomModifier() {
+		return wisdomModifier;
+	}
+
+	public void setWisdomModifier(int wisdomModifier) {
+		this.wisdomModifier = wisdomModifier;
+	}
+
 
     public String getType() {
         return type;
