@@ -12,6 +12,7 @@ package com.game.models;
  * @author Kaushik
  */
 public abstract class Item {
+	private String name;
     private int itemID;
     private int intelligenceModifier;
     private int wisdomModifier;
@@ -75,6 +76,12 @@ public abstract class Item {
 	}
 	public void setDexterityModifer(int dexterityModifer) {
 		this.dexterityModifer = dexterityModifer;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
     
 }

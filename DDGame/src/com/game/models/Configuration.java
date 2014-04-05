@@ -48,4 +48,9 @@ public class Configuration {
     public static String armourTypes[] = {"helmet", "chest", "shield", "boot", "gloves", "belt", "bracers"};
     public static final int defaultLevel = 1;
     public static final int defaultTreasureValue = 1000;
+    public static enum modifiers{
+    	Intelligence,Wisdom,Armor,Strength,Constitution,Charisma,Dexterity,Attack, damage;
+    };
+    public static String[] modifiersList = {"Intelligence","Wisdom","Armor","Strength","Constitution","Charisma","Dexterity","Attack", "damage"};
+    public static String[] weaponModifier = {"Attack", "damage"};
 }

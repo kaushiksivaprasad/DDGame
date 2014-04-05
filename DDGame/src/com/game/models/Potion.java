@@ -18,7 +18,6 @@ import javax.xml.bind.annotation.XmlAccessorType;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Potion extends Item{
     private int potionPts;
-    private String name;
 
     public int getPotionPts() {
         return potionPts;
@@ -27,13 +26,4 @@ public class Potion extends Item{
     public void setPotionPts(int potionPts) {
         this.potionPts = potionPts;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-    
 }

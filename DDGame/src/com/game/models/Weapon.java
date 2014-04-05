@@ -23,7 +23,7 @@ public class Weapon extends Item
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 83 * hash + Objects.hashCode(this.name);
+        hash = 83 * hash + Objects.hashCode(getName());
         return hash;
     }
 
@@ -36,7 +36,7 @@ public class Weapon extends Item
             return false;
         }
         final Weapon other = (Weapon) obj;
-        if (!Objects.equals(this.name, other.name)) {
+        if (!Objects.equals(getName(), other.getName())) {
             return false;
         }
         return true;
@@ -44,7 +44,6 @@ public class Weapon extends Item
     private String weaponType;
     private int attackRange;
     private int attackPts;
-    private String name;
 
     public String getWeaponType() {
         return weaponType;
@@ -68,13 +67,5 @@ public class Weapon extends Item
 
     public void setAttackPts(int attackPts) {
         this.attackPts = attackPts;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }
