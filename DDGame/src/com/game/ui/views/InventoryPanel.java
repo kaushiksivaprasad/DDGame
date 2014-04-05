@@ -15,7 +15,9 @@ import com.game.models.Player;
 import com.game.models.Potion;
 import com.game.models.Ring;
 import com.game.models.Weapon;
+
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -24,6 +26,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
+
+import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -67,6 +71,7 @@ public class InventoryPanel extends JDialog implements ActionListener{
     public GameCharacter player;
     public int emptyNumber; //this is used to diceied which item is empty now so when unequip we can put item here
     public int newEmptyNumber = 99; //this is used to keep the number when we equip an item
+    public JTextArea characterInformation;
     
     public InventoryPanel(GameCharacter player){
         this.player = player ;
@@ -109,60 +114,70 @@ public class InventoryPanel extends JDialog implements ActionListener{
          JPanel chestAndBeltPanel = new JPanel();
          chestAndBeltPanel.setLayout(new BoxLayout(chestAndBeltPanel, BoxLayout.Y_AXIS));
          JPanel helmetAndBracers = new JPanel();
+         JPanel characterView = new JPanel();
+         characterInformation = new JTextArea();
+         String s = makingInformationForCharacter();
+         System.out.print(s);
+         characterInformation.setText(s);
+         //characterInformation.setPreferredSize(new Dimension(200,200));
+         //characterInformation.setMinimumSize(new Dimension(200,200));
+         //characterInformation.setPreferredSize(new Dimension(200,200));
+         characterView.add(characterInformation);
+         characterView.setBorder(BorderFactory.createLineBorder(Color.BLACK));
          
          basicPanel.setLayout(new BoxLayout(basicPanel, BoxLayout.Y_AXIS));
          
          Buttons = new JButton[inventorySize];
          
-         helmet = new JButton("helmet");
+         helmet = new JButton("None");
          helmet.setPreferredSize(new Dimension(130,50));
          helmet.addActionListener(this);
          helmet.setActionCommand("helmet");
          equipments[0].add(helmet);
          
-         chest = new JButton("chest");
+         chest = new JButton("None");
          chest.setPreferredSize(new Dimension(130,50));
          chest.addActionListener(this);
          chest.setActionCommand("chest");
          equipments[1].add(chest);
          
-         weapon = new JButton("weapon");
+         weapon = new JButton("None");
          weapon.setPreferredSize(new Dimension(130,50));
          weapon.addActionListener(this);
          weapon.setActionCommand("weapon");
          equipments[2].add(weapon);
          
-         shield = new JButton("sheild");
+         shield = new JButton("None");
          shield.setPreferredSize(new Dimension(130,50));
          shield.addActionListener(this);
          shield.setActionCommand("shield");
          equipments[3].add(shield);
          
-         boot = new JButton("boot");
+         boot = new JButton("None");
          boot.setPreferredSize(new Dimension(130,50));
          boot.addActionListener(this);
          boot.setActionCommand("boot");
          equipments[4].add(boot);
          
-         ring = new JButton("ring");
+         ring = new JButton("None");
          ring.setPreferredSize(new Dimension(130,50));
          ring.addActionListener(this);
          ring.setActionCommand("ring");
          equipments[5].add(ring);
          
-         gloves = new JButton("gloves");
+         gloves = new JButton("None");
          gloves.setPreferredSize(new Dimension(130,50));
          gloves.addActionListener(this);
          gloves.setActionCommand("gloves");
          equipments[6].add(gloves);
          
-         belt = new JButton("belt");
+         belt = new JButton("None");
          belt.setPreferredSize(new Dimension(130,50));
          belt.addActionListener(this);
          belt.setActionCommand("belt");
          equipments[7].add(belt);
          
-         bracers = new JButton("bracers");
+         bracers = new JButton("None");
          bracers.setPreferredSize(new Dimension(130,50));
          bracers.addActionListener(this);
          bracers.setActionCommand("bracers");
@@ -173,16 +188,31 @@ public class InventoryPanel extends JDialog implements ActionListener{
          if(ar != null){
              equipName = ar.getName();
              belt.setText(equipName);
+             int a = ar.getConstitutionModifier();
+             int b = this.player.getConstitutionModifier();
+             this.player.setConstitutionModifier(a+b);
+             a = ar.getStrengthModifer();
+             b = this.player.getStrengthModifier();
+             this.player.setStrengthModifier(a+b);
+             characterInformation.setText(this.makingInformationForCharacter());
          }
          ar = characterInventory.getBoot();
          if(ar != null){
              equipName = ar.getName();
              boot.setText(equipName);
+             int a = ar.getDexterityModifer();
+             int b = this.player.getDexterityModifier();
+             this.player.setDexterityModifier(a+b);
+             characterInformation.setText(this.makingInformationForCharacter());
          }
          ar = characterInventory.getBracers();
          if(ar != null){
              equipName = ar.getName();
              bracers.setText(equipName);
+             int a = ar.getStrengthModifer();
+             int b = this.player.getStrengthModifier();
+             this.player.setStrengthModifier(a+b);
+             characterInformation.setText(this.makingInformationForCharacter());
          }
          ar = characterInventory.getChest();
          if(ar != null){
@@ -198,6 +228,13 @@ public class InventoryPanel extends JDialog implements ActionListener{
          if(ar != null){
              equipName = ar.getName();
              helmet.setText(equipName);
+             int a = ar.getIntelligenceModifier();
+             int b = this.player.getIntelligenceModifier();
+             this.player.setIntelligenceModifier(a+b);;
+             a = ar.getWisdomModifier();
+             b = this.player.getWisdomModifier();
+             this.player.setWisdomModifier(a+b);
+             characterInformation.setText(this.makingInformationForCharacter());
          }
          ar = characterInventory.getShield();
          if(ar != null){
@@ -208,6 +245,22 @@ public class InventoryPanel extends JDialog implements ActionListener{
          if(ri != null){
              equipName = ri.getName();
              ring.setText(equipName);
+             int a = ri.getConstitutionModifier();
+             int b = this.player.getConstitutionModifier();
+             System.out.println("player: " + b);
+             System.out.println("Ring: " + a);
+             this.player.setConstitutionModifier(a+b);
+             //System.out.println(this.player.getConstitutionModifier());
+             a = ri.getStrengthModifer();
+             b = this.player.getStrengthModifier();
+             this.player.setStrengthModifier(a+b);
+             a = ri.getWisdomModifier();
+             b = this.player.getWisdomModifier();
+             this.player.setWisdomModifier(a+b);
+             a = ri.getCharismaModifer();
+             b = this.player.getCharismaModifier();
+             this.player.setCharismaModifier(a+b);
+             characterInformation.setText(this.makingInformationForCharacter());
          }
          Weapon wa = characterInventory.getEquippedWeapon();
          if(wa != null){
@@ -252,8 +305,12 @@ public class InventoryPanel extends JDialog implements ActionListener{
          
          
          JScrollPane Pane = new JScrollPane();
+         JScrollPane Pane2 = new JScrollPane();
+         
+         Pane2.setPreferredSize(new Dimension(400,100));
         
-         informationLable.setPreferredSize(new Dimension(400,100));
+         //informationLable.setPreferredSize(new Dimension(400,100));
+         Pane2.getViewport().add(informationLable);
          
          Pane.setPreferredSize(new Dimension(450,450));
          
@@ -325,19 +382,20 @@ public class InventoryPanel extends JDialog implements ActionListener{
          
          Pane.getViewport().add(topPanel);
          
-         bottomPanel.add(informationLable);
+         bottomPanel.add(Pane2);//usedtobe informationLable
          bottomPanel.add(RightBottomPanel);
          
          basicPanel.add(Pane);
          basicPanel.add(bottomPanel);
          
+         panel.add(characterView);//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
          panel.add(equipmentsPanel);
          panel.add(basicPanel);
          
          add(panel);
          setModalityType(ModalityType.APPLICATION_MODAL);
         setTitle("Inventory Panel");
-        setSize(550,800);
+        setSize(550,1200);
         setResizable(false);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -388,22 +446,174 @@ public class InventoryPanel extends JDialog implements ActionListener{
         InformationSB.append("ArmourClass: ");
         InformationSB.append(ArmourPts);
         InformationSB.append("\n");
+        InformationSB.append("StrengthModifer: ");
+        InformationSB.append(A.getStrengthModifer());
+        InformationSB.append("\n");
+        InformationSB.append("CharismaModifer: ");
+        InformationSB.append(A.getCharismaModifer());
+        InformationSB.append("\n");
+        InformationSB.append("WisdomModifier: ");
+        InformationSB.append(A.getWisdomModifier());
+        InformationSB.append("\n");
+        InformationSB.append("IntelligenceModifier: ");
+        InformationSB.append(A.getIntelligenceModifier());
+        InformationSB.append("\n");
+        InformationSB.append("DexterityModifer: ");
+        InformationSB.append(A.getDexterityModifer());
+        InformationSB.append("\n");
+        InformationSB.append("ConstitutionModifier: ");
+        InformationSB.append(A.getConstitutionModifier());
+        InformationSB.append("\n");
+        
         String Information = InformationSB.toString();
         return Information;
     }
     
     public String makingInformationForCharacter(){
     	String result = null;
+    	StringBuilder sb = new StringBuilder();
+    	sb.append("level: ");
+    	sb.append(this.player.getLevel());
+    	sb.append("\n");
     	
-    	StringBuilder SB = new StringBuilder();
-    	SB.append("Strength: ");
-    	SB.append("Constitution: ");
-    	SB.append("Dexterity: ");
-    	SB.append("Intelligence: ");
-    	SB.append("Charisma: ");
-    	SB.append("Wisdom: ");
+    	sb.append("Strength: ");
+    	sb.append(this.player.getStrength());
+    	if(this.player.getStrengthModifier()<0){
+    		sb.append(this.player.getStrengthModifier());
+    	}else{
+    		sb.append(" + ");
+    		sb.append(this.player.getStrengthModifier());
+    	}
+    	sb.append("\n");
     	
+    	sb.append("Constitution: ");
+    	sb.append(this.player.getConstitution());
+    	if(this.player.getConstitutionModifier()<0){
+    		sb.append(this.player.getConstitutionModifier());
+    	}else{
+    		sb.append(" + ");
+    		sb.append(this.player.getConstitutionModifier());
+    	}
+    	sb.append("\n");
+    	
+    	sb.append("Dexterity: ");
+    	sb.append(this.player.getDexterity());
+    	if(this.player.getDexterityModifier()<0){
+    		sb.append(this.player.getDexterityModifier());
+    	}else{
+    		sb.append(" + ");
+    		sb.append(this.player.getDexterityModifier());
+    	}
+    	sb.append("\n");
+    	
+    	sb.append("Intelligence: ");
+    	sb.append(this.player.getIntelligence());
+    	if(this.player.getDexterityModifier()<0){
+    		sb.append(this.player.getIntelligenceModifier());
+    	}else{
+    		sb.append(" + ");
+    		sb.append(this.player.getIntelligenceModifier());
+    	}
+    	sb.append("\n");
+    	
+    	sb.append("Charisma: ");
+    	sb.append(this.player.getCharisma());
+    	if(this.player.getCharismaModifier()<0){
+    		sb.append(this.player.getCharismaModifier());
+    	}else{
+    		sb.append(" + ");
+    		sb.append(this.player.getCharismaModifier());
+    	}
+    	sb.append("\n");
+    	
+    	sb.append("Wisdom: ");
+    	sb.append(this.player.getWisdom());
+    	if(this.player.getWisdomModifier()<0){
+    		sb.append(this.player.getWisdomModifier());
+    	}else{
+    		sb.append(" + ");
+    		sb.append(this.player.getWisdomModifier());
+    	}
+    	sb.append("\n");
+    	
+    	sb.append("hit points: ");
+    	sb.append(this.player.getHealth());
+    	sb.append("\n");
+    	
+    	sb.append("base Attack Modifier: ");
+    	sb.append(this.player.getLevel());
+    	sb.append("\n");
+    	
+    	sb.append("number of attacks per round: ");
+    	sb.append(calculateBaseAttackBonuss(this.player.getLevel()));
+    	sb.append("\n");
+    	
+    	sb.append("Attack modifier for melee: ");
+    	int a = this.player.getLevel() + this.player.getStrengthModifier();
+    	sb.append(a);
+    	sb.append("\n");
+    	
+    	sb.append("Attack modifier for range: ");
+    	a = this.player.getLevel() + this.player.getDexterityModifier();
+    	sb.append(a);
+    	sb.append("\n");
+    	
+    	sb.append("Armor Class: ");
+    	int ac = calculateArmorClass();
+    	sb.append(ac);
+    	
+    	result = sb.toString();
     	return result;
+    }
+    
+    public int calculateBaseAttackBonuss(int level) {
+
+
+        if (level <= 5) {
+            return 1;
+        } else {
+            int div = level / 5;
+
+            if (level % 5 != 0) {
+                div = div + 1;
+            }
+            return div;
+        }
+    }
+    
+    public int calculateArmorClass() {
+            GameCharacter player = this.player;
+            //player.getArmorModifier() + player.sheildModifier
+            // player.getInventory().
+
+            Inventory inventory = player.getInventory();
+            int ArmorModifier = 0;
+            int ShieldModifier = 0;
+
+            //  System.out.println("CurrentPlayer" +currentplayer+ "Inventory " +inventory.getEquippedWeapon().getName());
+
+            if (inventory.getBoot() != null) {
+                ArmorModifier = ArmorModifier + inventory.getBoot().getArmourPts();
+            }
+            if (inventory.getBracers() != null) {
+                ArmorModifier = ArmorModifier + inventory.getBracers().getArmourPts();
+            }
+            if (inventory.getChest() != null) {
+                ArmorModifier = ArmorModifier + inventory.getChest().getArmourPts();
+            }
+            if (inventory.getGloves() != null) {
+                ArmorModifier = ArmorModifier + inventory.getGloves().getArmourPts();
+            }
+            if (inventory.getShield() != null) {
+                ShieldModifier = inventory.getShield().getArmourPts();
+            }
+            if (inventory.getHelmet() != null) {
+                ArmorModifier = ArmorModifier + inventory.getHelmet().getArmourPts();
+            }
+
+            System.out.println("Armor Modifier" + ArmorModifier + "ShieldModifier" + ShieldModifier);
+
+            return (10 + ArmorModifier + ShieldModifier);
     }
     
     /**
@@ -448,6 +658,39 @@ public class InventoryPanel extends JDialog implements ActionListener{
     public String makingInformationForOthers(String name){
         String information = "Name: " + name + "\n";
         return information;
+    }
+    
+    
+    public String makingInformationFOrRing(Ring r){
+    	String s = null;
+        String ArmourName = r.getName();
+        StringBuilder InformationSB = new StringBuilder();
+        InformationSB.append("Name: ");
+        InformationSB.append(ArmourName);
+        InformationSB.append("\n");
+    	InformationSB.append("ArmourClass: ");
+        InformationSB.append(r.getArmourPts());
+        InformationSB.append("\n");
+        InformationSB.append("StrengthModifer: ");
+        InformationSB.append(r.getStrengthModifer());
+        InformationSB.append("\n");
+        InformationSB.append("CharismaModifer: ");
+        InformationSB.append(r.getCharismaModifer());
+        InformationSB.append("\n");
+        InformationSB.append("WisdomModifier: ");
+        InformationSB.append(r.getWisdomModifier());
+        InformationSB.append("\n");
+        InformationSB.append("IntelligenceModifier: ");
+        InformationSB.append(r.getIntelligenceModifier());
+        InformationSB.append("\n");
+        InformationSB.append("DexterityModifer: ");
+        InformationSB.append(r.getDexterityModifer());
+        InformationSB.append("\n");
+        InformationSB.append("ConstitutionModifier: ");
+        InformationSB.append(r.getConstitutionModifier());
+        InformationSB.append("\n");
+        s = InformationSB.toString();
+        return s;
     }
     /**
      * this method is used to creat the function of buttons include equip and unequip
@@ -498,6 +741,9 @@ public class InventoryPanel extends JDialog implements ActionListener{
                     String type = armor.getArmourType();
                     switch(type){
                         case "boot": Armour ar = characterInventory.getBoot();
+                        			 int a = armor.getDexterityModifer();
+                        			 int d = player.getDexterityModifier();
+                        			 player.setDexterityModifier(a+d);
                                      if(ar == null){
                                         characterInventory.setBoot(armor);
                                         Buttons[currentItemNum].setText("");
@@ -517,6 +763,12 @@ public class InventoryPanel extends JDialog implements ActionListener{
                                      }
                                      break;
                         case "helmet": ar = characterInventory.getHelmet();
+                        				a = armor.getIntelligenceModifier();
+                        				d = player.getIntelligenceModifier();
+                        				player.setIntelligenceModifier(a+d);
+                        				a = armor.getWisdomModifier();
+                        				d = player.getWisdomModifier();
+                        				player.setWisdomModifier(a+d);;
                                      if(ar == null){
                                         characterInventory.setHelmet(armor);
                                         Buttons[currentItemNum].setText("");
@@ -593,6 +845,12 @@ public class InventoryPanel extends JDialog implements ActionListener{
                                      }
                                      break;
                         case "belt": ar = characterInventory.getBelt();
+                        			 a = armor.getConstitutionModifier();
+                        			 d = player.getConstitutionModifier();
+                        			 player.setConstitutionModifier(a+d);
+                        			 a = armor.getStrengthModifer();
+                        			 d = player.getStrengthModifier();
+                        			 player.setStrengthModifier(a+d);;
                                      if(ar == null){
                                         characterInventory.setBelt(armor);
                                         Buttons[currentItemNum].setText("");
@@ -612,6 +870,9 @@ public class InventoryPanel extends JDialog implements ActionListener{
                                      }
                                      break;
                         case "bracers": ar = characterInventory.getBracers();
+                        				a = armor.getStrengthModifer();
+                        				d = player.getStrengthModifier();
+                        				player.setStrengthModifier(a+d);
                                      if(ar == null){
                                         characterInventory.setBracers(armor);
                                         Buttons[currentItemNum].setText("");
@@ -633,9 +894,21 @@ public class InventoryPanel extends JDialog implements ActionListener{
                     }
                 }else if(currentInventory instanceof Ring){
                     Ring ri2 = characterInventory.getRing();
-                    if(ri2 == null){
-                        Ring ri = (Ring)currentInventory;
-                        String name = ring.getName();
+                    Ring ri = (Ring)currentInventory;
+                    int r = ri.getStrengthModifer();
+                    int s = player.getStrengthModifier();
+                    player.setStrengthModifier(s+r);
+                    r = ri.getConstitutionModifier();
+                    s = player.getConstitutionModifier();
+                    player.setConstitutionModifier(s+r);;
+                    r = ri.getWisdomModifier();
+                    s = player.getWisdomModifier();
+                    player.setWisdomModifier(s+r);;
+                    r = ri.getCharismaModifer();
+                    s = player.getCharismaModifier();
+                    player.setCharismaModifier(s+r);;
+                    if(ri2 == null){                       
+                        String name = ri.getName();
                         characterInventory.setRing(ri);
                         Buttons[currentItemNum].setText("");
                         newEmptyNumber = currentItemNum;
@@ -643,8 +916,7 @@ public class InventoryPanel extends JDialog implements ActionListener{
                         informationLable.setText("");
                         inventoryButtonMap.remove(currentItemNum);
                     }else{
-                        Ring ri = (Ring)currentInventory;
-                        String name = ring.getName();
+                        String name = ri.getName();
                         characterInventory.setRing(ri);
                         Buttons[currentItemNum].setText(ri2.getName());
                         ring.setText(name);
@@ -655,7 +927,7 @@ public class InventoryPanel extends JDialog implements ActionListener{
                         characterInventory.setItems(li);
                     }
                 }
-                
+            	characterInformation.setText(this.makingInformationForCharacter());
                 player.setInventory(characterInventory);
                 
                 equip.setEnabled(false);
@@ -683,7 +955,7 @@ public class InventoryPanel extends JDialog implements ActionListener{
                     inventoryButtonMap.put(emptyNumber, currentInventory);
                     Buttons[emptyNumber].addActionListener(this);
                     Buttons[emptyNumber].setActionCommand(Integer.toString(emptyNumber));
-                    weapon.setText("weapon");
+                    weapon.setText("None");
                     characterInventory.setEquippedWeapon(null);
                     if(emptyNumber<z){
                         emptyNumber = z;
@@ -713,32 +985,50 @@ public class InventoryPanel extends JDialog implements ActionListener{
                     Buttons[emptyNumber].addActionListener(this);
                     Buttons[emptyNumber].setActionCommand(Integer.toString(emptyNumber));
                     switch (type){
-                        case "boot":  
-                            boot.setText("boot");
+                        case "boot":
+               			 	int a = armor.getDexterityModifer();
+               			 	int d = player.getDexterityModifier();
+               			 	player.setDexterityModifier(d-a);
+                            boot.setText("None");
                             characterInventory.setBoot(null);
                             break;
-                        case "belt":  
-                            belt.setText("belt");
+                        case "belt":
+                        	a = armor.getConstitutionModifier();
+               			 	d = player.getConstitutionModifier();
+               			 	player.setConstitutionModifier(d-a);
+               			 	a = armor.getStrengthModifer();
+               			 	d = player.getStrengthModifier();
+               			 	player.setStrengthModifier(d-a);;
+                            belt.setText("None");
                             characterInventory.setBelt(null);
                             break;
                         case "gloves, ":
-                            gloves.setText("gloves");
+                            gloves.setText("None");
                             characterInventory.setGloves(null);
                             break;
                         case "bracers":
-                            bracers.setText("bracers");
+                        	a = armor.getStrengthModifer();
+            				d = player.getStrengthModifier();
+            				player.setStrengthModifier(d-a);
+                            bracers.setText("None");
                             characterInventory.setBracers(null);
                             break;
-                        case "helmet, ":
-                            helmet.setText("helmet");
+                        case "helmet":
+            				a = armor.getIntelligenceModifier();
+            				d = player.getIntelligenceModifier();
+            				player.setIntelligenceModifier(d-a);
+            				a = armor.getWisdomModifier();
+            				d = player.getWisdomModifier();
+            				player.setWisdomModifier(d-a);;
+                            helmet.setText("None");
                             characterInventory.setHelmet(null);
                             break;
                         case "chest":
-                            chest.setText("chest");
+                            chest.setText("None");
                             characterInventory.setChest(null);
                             break;
                         case "shield":
-                            shield.setText("shield");
+                            shield.setText("None");
                             characterInventory.setShield(null);
                             break;
                     }
@@ -751,6 +1041,18 @@ public class InventoryPanel extends JDialog implements ActionListener{
                     newEmptyNumber = 99;
                 }else if(currentInventory instanceof Ring){
                     Ring wea = (Ring)currentInventory;
+                    int r = wea.getStrengthModifer();
+                    int s = player.getStrengthModifier();
+                    player.setStrengthModifier(s-r);
+                    r = wea.getConstitutionModifier();
+                    s = player.getConstitutionModifier();
+                    player.setConstitutionModifier(s-r);;
+                    r = wea.getWisdomModifier();
+                    s = player.getWisdomModifier();
+                    player.setWisdomModifier(s-r);;
+                    r = wea.getCharismaModifer();
+                    s = player.getCharismaModifier();
+                    player.setCharismaModifier(s-r);;
                     String name = wea.getName();
                     li = characterInventory.getItems();
                     if(li != null){
@@ -769,7 +1071,7 @@ public class InventoryPanel extends JDialog implements ActionListener{
                     inventoryButtonMap.put(emptyNumber, currentInventory);
                     Buttons[emptyNumber].addActionListener(this);
                     Buttons[emptyNumber].setActionCommand(Integer.toString(emptyNumber));
-                    ring.setName("ring");
+                    ring.setText("None");
                     characterInventory.setRing(null);
                     if(emptyNumber<z){
                         emptyNumber = z;
@@ -780,6 +1082,7 @@ public class InventoryPanel extends JDialog implements ActionListener{
                     newEmptyNumber = 99;
                 }
                 MapPanel.inventory = characterInventory;
+                characterInformation.setText(this.makingInformationForCharacter());
                 equip.setEnabled(false);
                 unequip.setEnabled(false);
         }else if("ring".equals(command)){
@@ -885,7 +1188,7 @@ public class InventoryPanel extends JDialog implements ActionListener{
                 use.setEnabled(false);
             }else if (item instanceof Ring) {
                 Ring r = (Ring) item;
-                informationLable.setText(makingInformationForOthers(r.getName()));
+                informationLable.setText(makingInformationFOrRing(r));
                 equip.setEnabled(true);
                 unequip.setEnabled(false);
                 use.setEnabled(false);
@@ -921,6 +1224,10 @@ public class InventoryPanel extends JDialog implements ActionListener{
           Ring r = new Ring();
           r.setName("bigRing");
           r.setItemID(2);
+          r.setStrengthModifer(2);
+          r.setConstitutionModifier(3);
+          r.setWisdomModifier(1);
+          r.setCharismaModifer(4);
           
           Ring r2 = new Ring();
           r.setName("smallRing");
@@ -930,6 +1237,7 @@ public class InventoryPanel extends JDialog implements ActionListener{
           a.setArmourPts(2);
           a.setName("LeatherBoot");
           a.setArmourType("boot");
+          a.setDexterityModifer(2);
           
           Armour a2 = new Armour();
           a2.setArmourPts(1);
@@ -945,16 +1253,21 @@ public class InventoryPanel extends JDialog implements ActionListener{
           a4.setArmourPts(2);
           a4.setName("LeatherHelmet");
           a4.setArmourType("helmet");
+          a4.setIntelligenceModifier(2);
+          a4.setWisdomModifier(3);
           
           Armour a5 = new Armour();
-          a5.setArmourPts(2);
+          a5.setArmourPts(0);
           a5.setName("LeatherBelt");
           a5.setArmourType("belt");
+          a5.setConstitutionModifier(1);
+          a5.setStrengthModifer(2);
           
           Armour a6 = new Armour();
           a6.setArmourPts(7);
           a6.setName("studdedLeatherBracer");
           a6.setArmourType("bracers");
+          a6.setStrengthModifer(3);
           
           Armour a7 = new Armour();
           a7.setArmourPts(8);
@@ -993,8 +1306,22 @@ public class InventoryPanel extends JDialog implements ActionListener{
           in.setTotGold(new Long(178972));
           in.setItems(i);
           p.setInventory(in);
-          System.out.println("current weapon1:" + p.getInventory().getEquippedWeapon().getName());
+          p.setStrength(10);
+          p.setStrengthModifier(2);
+          p.setCharismaModifier(11);
+          p.setCharismaModifier(3);
+          p.setConstitution(12);
+          p.setConstitutionModifier(4);
+          p.setDexterity(13);
+          p.setDexterityModifier(5);
+          p.setHealth(20);
+          p.setWisdom(14);
+          p.setWisdomModifier(6);
+          p.setIntelligence(15);
+          p.setIntelligenceModifier(7);
+          p.setLevel(3);
+          //System.out.println("current weapon1:" + p.getInventory().getEquippedWeapon().getName());
           InventoryPanel ex = new InventoryPanel(p);
-          System.out.println("current weapon2:" + p.getInventory().getEquippedWeapon().getName());
+          //System.out.println("current weapon2:" + p.getInventory().getEquippedWeapon().getName());
 	}
 }
