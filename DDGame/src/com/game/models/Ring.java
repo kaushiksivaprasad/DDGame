@@ -18,19 +18,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Ring extends Item{
-    private String name;
     private int incHealth;
     private int incArmour;
     private int incAttack;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getIncHealth() {
         return incHealth;
     }
@@ -58,7 +48,7 @@ public class Ring extends Item{
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 41 * hash + Objects.hashCode(this.name);
+        hash = 41 * hash + Objects.hashCode(getName());
         return hash;
     }
 
@@ -71,7 +61,7 @@ public class Ring extends Item{
             return false;
         }
         final Ring other = (Ring) obj;
-        if (!Objects.equals(this.name, other.name)) {
+        if (!Objects.equals(getName(), other.getName())) {
             return false;
         }
         return true;
