@@ -7,25 +7,31 @@ package com.game.ui.views;
 
 import com.game.models.Armour;
 import com.game.models.Configuration;
+
 import static com.game.models.Configuration.*;
+
 import com.game.models.GameBean;
 import com.game.models.GameCharacter;
 import com.game.models.Inventory;
 import com.game.models.Item;
 import com.game.models.MapInformation;
 import com.game.models.Player;
+import com.game.models.Ring;
 import com.game.models.TileInformation;
 import com.game.models.Weapon;
 import com.game.util.GameUtils;
 import com.game.xml.models.MapInformationWrapper;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GraphicsEnvironment;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -41,11 +47,13 @@ import java.util.StringTokenizer;
 import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+
 import org.apache.commons.lang3.StringUtils;
 
 
@@ -147,16 +155,46 @@ public class MapPanel extends JFrame implements ActionListener {
         playersIndex = new ArrayList();
         for (int x = 0; x < mapRows; x++) {
             for (int y = 0; y < mapColumns; y++) {
+            	boolean checkChest = false;
                 tile[commandCounter - 1] = new JButton();
                 (tile[commandCounter - 1]).setActionCommand("" + commandCounter);
                 tile[commandCounter - 1].addActionListener(this);
                 mapPanel.add(tile[commandCounter - 1]);
                 tileInformation = pathMap.get(commandCounter);
                 if (tileInformation != null) {
+                	
                     tilesNumber.add(tileInformation.getLocation());
                     mapPathPoints();
+                    
+                    // Comment below code. 
+                    
+                    if(commandCounter == 8 || commandCounter == 10){
+                    	tileInformation.setChest(true);
+                    	
+                    	Armour armr = new Armour();
+                		armr.setName("Armr1");
+                		armr.setModifierInForce(Configuration.modifiersList[Configuration.modifiers.Dexterity.ordinal()]);
+                		armr.setDexterityModifer(5);
+                		tileInformation.setArmour(armr);
+                		Ring ring = new Ring();
+                		ring.setName("Ring1");
+                		ring.setModifierInForce(Configuration.modifiersList[Configuration.modifiers.Wisdom.ordinal()]);
+                		ring.setWisdomModifier(5);
+                		Weapon wpn = new Weapon();
+                		wpn.setName("Weapon 1");
+                		wpn.setDexterityModifer(5);
+                		wpn.setModifierInForce(Configuration.modifiersList[Configuration.modifiers.damage.ordinal()]);
+                		tileInformation.setRing(ring);
+                		tileInformation.setWeapon(wpn);
+                    	 	
+                    	
+                    	mapChestPoints();
+                    }
+                  
+                   
                     if (tileInformation.isEndTile()) {
                         mapEndPoints();
+                        checkChest = true;
                     }
                     if (tileInformation.isStartTile()) {
                         
@@ -175,6 +213,7 @@ public class MapPanel extends JFrame implements ActionListener {
                         playersIndex.add(numberofPlayers);
                         numberofPlayers++;
                         tempVariable++;
+                        checkChest = true;
 
                     }
                     if (tileInformation.getEnemy() != null) {
@@ -184,13 +223,22 @@ public class MapPanel extends JFrame implements ActionListener {
 
                         enemyLocation.put(numberofPlayers, tileInformation.getLocation());
                         mapEnemyPoints(tileInformation);
+                      //  tileInformation.getEnemy().setattackedByPlayer(false);
                         enemys.put(numberofPlayers, tileInformation.getEnemy());
                         userLocation.put(numberofPlayers, tileInformation.getLocation());
                         users.put(numberofPlayers, tileInformation.getEnemy());
 
                         // numberofEnemys++;
                         numberofPlayers++;
+                        checkChest = true;
                     }
+                    
+                    if((checkChest == false) && (tileInformation.isChest() ==true)){	
+                    	System.out.println(tileInformation.getWeapon().getName());
+                    	System.out.println(tileInformation.getRing().getName());
+                    	mapChestPoints();
+                    }
+                    
                 }
                 commandCounter++;
             }
@@ -263,6 +311,8 @@ public class MapPanel extends JFrame implements ActionListener {
            }else{
                tileInformation.setLocation(userLocation.get(playerId));
                tileInformation.setEnemy(users.get(playerId));
+               System.out.println("Saving Attacked by info" + users.get(playerId).getattackedByPlayer());
+               
            }    
             pathMapp.put(userLocation.get(playerId), tileInformation);
         }
@@ -271,6 +321,7 @@ public class MapPanel extends JFrame implements ActionListener {
        System.out.println("CommanCounter" + commandCounter);
         
        for(int i = 1; i <= mapRows * mapColumns; i++){
+    	   boolean ischestVariable = false;
             tileInfo = pathMap.get(i);
                 if (tileInfo != null) {
                     
@@ -280,13 +331,32 @@ public class MapPanel extends JFrame implements ActionListener {
                         pathMapp.put(i, tileInfo);
                          System.out.println("Fianl Tile Drawing"+tileInfo + "at location" + i );
                         
-                    }else{
+                    }else if(tileInfo.isChest()){
+                    	
+                    	if(pathMapp.get(i) == null){
+                    		System.out.println("player not the chest");
+                    		pathMapp.put(i, tileInfo);
+                    	
+                    	}
+                    	else{
+                    		System.out.println("player on the chest");
+                    		tileInfo.setPlayer(pathMapp.get(i).getPlayer());
+                    		tileInfo.setStartTile(true);
+                    		pathMapp.put(i, tileInfo);
+                    	}
+                    }
+                    
+                    else{
                         if(pathMapp.get(i) == null){
-                            tileInfo = new TileInformation();
-                            tileInfo.setLocation(i);
-                            tileInfo.setStartTile(false);
-                            tileInfo.setEndTile(false);
-                            pathMapp.put(i, tileInfo);
+                        	
+                        		tileInfo = new TileInformation();
+                                tileInfo.setLocation(i);
+                                tileInfo.setStartTile(false);
+                                tileInfo.setEndTile(false);
+                                pathMapp.put(i, tileInfo);
+                        		
+                        	
+                            
                             
                             System.out.println("Path Drawing"+tileInfo + "at location" + i );
                         }
@@ -296,6 +366,7 @@ public class MapPanel extends JFrame implements ActionListener {
       
 
        MapInformation mapInfo = new MapInformation();
+       System.out.println(mapInfo);
        mapInfo.setPathMap(pathMapp);
        mapInfo.setUserLocation(userLoc);
        mapInfo.setColumns(mapColumns);
@@ -342,6 +413,15 @@ public class MapPanel extends JFrame implements ActionListener {
      */
     public void mapEndPoints() {
         tile[commandCounter - 1].setBackground(endPointColor);
+    }
+    
+    public void mapChestPoints(){
+    	try {
+			tile[commandCounter - 1].setIcon(GameUtils.shrinkImage("chests.png", 60, 60));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
     
     /**
@@ -757,10 +837,20 @@ public class MapPanel extends JFrame implements ActionListener {
                     }
                 }
 
-
-
+                // Here  I am restrict the monsters
+                
+               if(!playersIndex.contains(currentplayer) && sameplace){
+            	   GameCharacter character = users.get(currentplayer);
+            	   if(!character.getattackedByPlayer()){
+            		   sameplacehero = true;
+            	   }
+               }
+                
+               
                 if (sameplacehero || !canMove) {
                     if (sameplacehero) {
+                    	JOptionPane.showMessageDialog(null, "You can not attack on player");
+                    	tile[userLocation.get(currentplayer) - 1].setBackground(enemyColor);
                         System.out.println("You cannot move on hero");
                     } else {
                         System.out.println("You cannot Move there");
@@ -778,6 +868,8 @@ public class MapPanel extends JFrame implements ActionListener {
 
                         int rolls = cal1d20Roll();
                         if(!playersIndex.contains(sameplacePos)){
+                        	users.get(sameplacePos).setattackedByPlayer(true);
+                            enemys.get(sameplacePos).setattackedByPlayer(true);
                             System.out.println("\n\n Player's is Attack bonus  is : " + attackBonus + " \n Roll 1d20 Dice : " + rolls + "\n" + " Enemy's Armour class (AC) is :" + armorClass + "\n");
                             System.out.println("User Position" + userPosition);
                             fightingInformation.append("\n\n Player's is Attack bonus  is : " + attackBonus + " \n Roll 1d20 Dice : " + rolls + "\n" + " Enemy's Armour class (AC) is :" + armorClass + "\n");
@@ -800,6 +892,8 @@ public class MapPanel extends JFrame implements ActionListener {
                              int damagePoint = cal1d8Roll() + attackBonus;
                             if(!playersIndex.contains(sameplacePos)){
                                  fightingInformation.append("Enemy is under Attack" + "\n");
+                                  
+                                 
                            }else{
                                  fightingInformation.append("Player is under Attack" + "\n");
                             }
@@ -883,10 +977,39 @@ public class MapPanel extends JFrame implements ActionListener {
                         tile[userPosition - 1].setIcon(null);
                         if (!playersIndex.contains(currentplayer)) {
                             tile[actionLocation - 1].setBackground(enemyColor);
-                           
+                            
+                        }else{
+                        	// Here i need to call for chest.
+                        	
+                        	if(pathMap.get(actionLocation).isChest()){
+                        		// call function to the sha
+                        		// if(false){
+                        		//   	pathMap.get(actionLocation)
+                        		// }
+                        		new ChestView(pathMap.get(actionLocation), users.get(currentplayer));
+                        	}
+                        	
                         }
+                        // Here if last position will be chest then show chest again. 
+                        
+                        
+                        
+                        
+                        //////
+                        
                         if (deadPlayer == false) {
-                            userLocation.put(currentplayer, Integer.parseInt(e.getActionCommand()));
+                        	int lastLocationUser = userLocation.get(currentplayer);
+                        	if(pathMap.get(lastLocationUser).isChest()){
+                        		// tile[ - 1].setIcon(new ImageIcon("chests.png"));;
+                        		try {
+									tile[lastLocationUser - 1].setIcon(GameUtils.shrinkImage("chests.png", 60, 60));
+								} catch (IOException e1) {
+									// TODO Auto-generated catch block
+									e1.printStackTrace();
+								}
+                        	}
+                        	
+                        	userLocation.put(currentplayer, Integer.parseInt(e.getActionCommand()));
                             enemyLocation.put(currentplayer, Integer.parseInt(e.getActionCommand()));
                             // checkActivatedMonsters(actionLocationXY);
                         }
@@ -1230,6 +1353,7 @@ public class MapPanel extends JFrame implements ActionListener {
             //  System.out.println("CurrentPlayer" +currentplayer+ "Inventory " +inventory.getEquippedWeapon().getName());
 
             if (inventory.getBoot() != null) {
+           
                 ArmorModifier = ArmorModifier + inventory.getBoot().getArmourPts();
             }
             if (inventory.getBracers() != null) {
@@ -1246,6 +1370,11 @@ public class MapPanel extends JFrame implements ActionListener {
             }
             if (inventory.getHelmet() != null) {
                 ArmorModifier = ArmorModifier + inventory.getHelmet().getArmourPts();
+            }
+            if(inventory.getRing() != null){
+            	//   un comment below line.
+            	
+            	// ArmorModifier = ArmorModifier + inventory.getRing().getArmourPts(); 
             }
 
             System.out.println("Armor Modifier" + ArmorModifier + "ShieldModifier" + ShieldModifier);
@@ -1279,7 +1408,11 @@ public class MapPanel extends JFrame implements ActionListener {
                 ArmorModifier = ArmorModifier + inventory.getHelmet().getArmourPts();
             }
             
-            
+            if(inventory.getRing() != null){
+            	//   un comment below line.
+            	
+            	// ArmorModifier = ArmorModifier + inventory.getRing().getArmourPts(); 
+            }
             
             
             
@@ -1341,6 +1474,8 @@ public class MapPanel extends JFrame implements ActionListener {
         }
     }
 
+ 
+    
     //  public int calculateshieldModifier(Player player) {
     // According to inventories calculate it
     //  }
@@ -1355,6 +1490,16 @@ public class MapPanel extends JFrame implements ActionListener {
     /**
      *  This class is used for Inventory Control. (Generate Inventorypanel to change the inventory of player)
      */
+    
+    public class chestControl implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent ae) {
+			userLocation.get(currentplayer);
+			
+		}
+    	
+    }
 
     public class InventoryControl implements ActionListener {
 

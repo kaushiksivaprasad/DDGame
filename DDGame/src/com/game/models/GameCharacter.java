@@ -40,6 +40,14 @@ public class GameCharacter {
     private Inventory inventory;
     private int dexterity;
     private int wisdom;
+    private boolean attackedByPlayer ;
+    
+    public void setattackedByPlayer(boolean attackedByPlayer){
+    	this.attackedByPlayer = attackedByPlayer;
+    }
+    public boolean getattackedByPlayer(){
+    	return attackedByPlayer ;
+    }
     
     public int getIntelligenceModifier() {
 		return intelligenceModifier;

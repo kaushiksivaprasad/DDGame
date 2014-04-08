@@ -16,6 +16,7 @@ import javax.swing.JPanel;
 
 import com.game.models.Armour;
 import com.game.models.Configuration;
+import com.game.models.GameCharacter;
 import com.game.models.Inventory;
 import com.game.models.Item;
 import com.game.models.Player;
@@ -26,10 +27,10 @@ import com.game.models.Weapon;
 public class ChestView extends JDialog implements ActionListener{
 	TileInformation tileInformation;
 	JCheckBox chkBox[] = new JCheckBox[3];
-	Player player = null;
+	GameCharacter player = null;
 	int size = 0;
 	LinkedList<Item> tileInfoItems = new LinkedList<>();
-	public ChestView(TileInformation tileInfo, Player player) {
+	public ChestView(TileInformation tileInfo, GameCharacter player) {
 		this.tileInformation = tileInfo;
 		this.player = player;
 		doGui();
@@ -50,18 +51,18 @@ public class ChestView extends JDialog implements ActionListener{
 		JPanel temp = constructPanelForEachItem(tileInformation.getArmour());
 		if(temp != null){
 			panel.add(temp);
+			panel.add(Box.createVerticalStrut(20));
 		}
-		panel.add(Box.createVerticalStrut(20));
 		temp = constructPanelForEachItem(tileInformation.getRing());
 		if(temp != null){
 			panel.add(temp);
+			panel.add(Box.createVerticalStrut(20));
 		}
-		panel.add(Box.createVerticalStrut(20));
 		temp = constructPanelForEachItem(tileInformation.getWeapon());
 		if(temp != null){
 			panel.add(temp);
+			panel.add(Box.createVerticalStrut(20));
 		}
-		panel.add(Box.createVerticalStrut(20));
 		JPanel btnPanel = new JPanel();
 		btnPanel.setLayout(new BoxLayout(btnPanel, BoxLayout.X_AXIS));
 		btnPanel.setBorder(BorderFactory.createEmptyBorder(5,5,5,5));
@@ -78,7 +79,7 @@ public class ChestView extends JDialog implements ActionListener{
 		setResizable(false);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		pack();
-		setSize(new Dimension(400, 300));
+//		setSize(new Dimension(400, 300));
 		setLocationRelativeTo(null);
 		setVisible(true);
 	}
@@ -99,7 +100,7 @@ public class ChestView extends JDialog implements ActionListener{
 		wpn.setModifierInForce(Configuration.modifiersList[Configuration.modifiers.Attack.ordinal()]);
 		info.setRing(ring);
 		info.setWeapon(wpn);
-		Player player = new Player();
+		GameCharacter player = new GameCharacter();
 		player.setInventory(new Inventory());
 		player.getInventory().setItems(new LinkedList<Item>());
 		new ChestView(info, player);
@@ -186,17 +187,27 @@ public class ChestView extends JDialog implements ActionListener{
 		int y = 0;
 		for(int i = 0; i < tileInfoItems.size(); i++){
 			if(chkBox[i].isSelected()){
-				items.add(tileInfoItems.get(i));
+				Item item = tileInfoItems.get(i);
+				items.add(item);
 				y++;
-				if(i == 0){
+				if(item instanceof Armour){
 					tileInformation.setArmour(null);
 				}
-				else if(i == 1){
+				else if(item instanceof Ring){
 					tileInformation.setRing(null);
 				}
-				else if(i == 2){
+				else if(item instanceof Weapon){
 					tileInformation.setWeapon(null);
 				}
+//				if(i == 0){
+//					tileInformation.setArmour(null);
+//				}
+//				else if(i == 1){
+//					tileInformation.setRing(null);
+//				}
+//				else if(i == 2){
+//					tileInformation.setWeapon(null);
+//				}
 			}
 		}
 		if(y == tileInfoItems.size()){
