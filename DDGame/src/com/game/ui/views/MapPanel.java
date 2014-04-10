@@ -10,6 +10,7 @@ import com.game.models.Configuration;
 
 import static com.game.models.Configuration.*;
 
+import com.game.models.ChestBuilder;
 import com.game.models.GameBean;
 import com.game.models.GameCharacter;
 import com.game.models.Inventory;
@@ -167,7 +168,8 @@ public class MapPanel extends JFrame implements ActionListener {
                     mapPathPoints();
                     
                     // Comment below code. 
-                    
+                  
+                    /*
                     if(commandCounter == 8 || commandCounter == 10){
                     	tileInformation.setChest(true);
                     	
@@ -191,7 +193,7 @@ public class MapPanel extends JFrame implements ActionListener {
                     	mapChestPoints();
                     }
                   
-                   
+                    */
                     if (tileInformation.isEndTile()) {
                         mapEndPoints();
                         checkChest = true;
@@ -232,12 +234,12 @@ public class MapPanel extends JFrame implements ActionListener {
                         numberofPlayers++;
                         checkChest = true;
                     }
+                 
                     
                     if((checkChest == false) && (tileInformation.isChest() ==true)){	
-                    	System.out.println(tileInformation.getWeapon().getName());
-                    	System.out.println(tileInformation.getRing().getName());
                     	mapChestPoints();
                     }
+                    
                     
                 }
                 commandCounter++;
@@ -986,7 +988,12 @@ public class MapPanel extends JFrame implements ActionListener {
                         		// if(false){
                         		//   	pathMap.get(actionLocation)
                         		// }
-                        		new ChestView(pathMap.get(actionLocation), users.get(currentplayer));
+                        		//    send the code double . 
+                        		
+                        		ChestBuilder chestBuilder = new ChestBuilder(pathMap.get(actionLocation),users.get(currentplayer));
+                        		TileInformation tempTileInfo = chestBuilder.build();
+                        		new ChestView(tempTileInfo, users.get(currentplayer));
+                        	
                         	}
                         	
                         }
@@ -1374,7 +1381,7 @@ public class MapPanel extends JFrame implements ActionListener {
             if(inventory.getRing() != null){
             	//   un comment below line.
             	
-            	// ArmorModifier = ArmorModifier + inventory.getRing().getArmourPts(); 
+            	 ArmorModifier = ArmorModifier + inventory.getRing().getArmourPts(); 
             }
 
             System.out.println("Armor Modifier" + ArmorModifier + "ShieldModifier" + ShieldModifier);
@@ -1411,7 +1418,7 @@ public class MapPanel extends JFrame implements ActionListener {
             if(inventory.getRing() != null){
             	//   un comment below line.
             	
-            	// ArmorModifier = ArmorModifier + inventory.getRing().getArmourPts(); 
+            	 ArmorModifier = ArmorModifier + inventory.getRing().getArmourPts(); 
             }
             
             

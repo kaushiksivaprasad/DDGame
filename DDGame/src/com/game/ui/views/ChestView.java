@@ -145,7 +145,7 @@ public class ChestView extends JDialog implements ActionListener{
 		} else if (mod
 				.equalsIgnoreCase(Configuration.modifiersList[Configuration.modifiers.Constitution
 						.ordinal()])) {
-			builder.append(item.getStrengthModifer());
+			builder.append(item.getConstitutionModifier());
 		} else if (mod
 				.equalsIgnoreCase(Configuration.modifiersList[Configuration.modifiers.Charisma
 						.ordinal()])) {

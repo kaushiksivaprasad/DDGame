@@ -686,7 +686,9 @@ public class InventoryPanel extends JDialog implements ActionListener{
             if (inventory.getHelmet() != null) {
                 ArmorModifier = ArmorModifier + inventory.getHelmet().getArmourPts();
             }
-
+            if (inventory.getRing() != null){
+            	ArmorModifier = ArmorModifier + inventory.getRing().getArmourPts();
+            }
             System.out.println("Armor Modifier" + ArmorModifier + "ShieldModifier" + ShieldModifier);
 
             return (10 + ArmorModifier + ShieldModifier);
