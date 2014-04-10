@@ -168,10 +168,10 @@ public class CharacterEditor extends JPanel implements ActionListener {
         c.gridx++;
         level = new JTextField();
         level.setColumns(20);
-        if(!isEnemy){
+        /*if(!isEnemy){
             level.setText("1");
             level.setEnabled(false);
-        }
+        }*/
         outerPane.add(level, c);
         c.gridx = 0;
         c.gridy++;
@@ -287,8 +287,14 @@ public class CharacterEditor extends JPanel implements ActionListener {
                 int strModifier = GameUtils.calculateAbilityModifier(strength);
                 int conModifier = GameUtils.calculateAbilityModifier(constitution);
                 int dexModifier = GameUtils.calculateAbilityModifier(dext);
+                int wisModifier = GameUtils.calculateAbilityModifier(wisdom);
+                int intModifier = GameUtils.calculateAbilityModifier(intel);
+                int chaModifier = GameUtils.calculateAbilityModifier(charisma);
                 builder.setStrengthModifier(strModifier);
                 builder.setConstitutionModifier(conModifier);
+                builder.setCharismaModifier(chaModifier);
+                builder.setWisdomModifier(wisModifier);
+                builder.setIntelligenceModifier(intModifier);
                 builder.setDexterityModifier(dexModifier);
                 String type = null;
                 if (constitution < strength && constitution > dext) {

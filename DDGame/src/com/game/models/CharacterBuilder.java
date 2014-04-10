@@ -44,6 +44,9 @@ public class CharacterBuilder {
         this.character.setConstitutionModifier(character.getConstitutionModifier());
         this.character.setDexterity(character.getDexterity());
         this.character.setDexterityModifier(character.getDexterityModifier());
+        this.character.setCharismaModifier(character.getCharismaModifier());
+        this.character.setDexterityModifier(character.getDexterityModifier());
+        this.character.setIntelligenceModifier(character.getIntelligenceModifier());
         this.character.setHealth(character.getHealth());
         this.character.setImagePath(character.getImagePath());
         this.character.setIntelligence(character.getIntelligence());
@@ -93,6 +96,18 @@ public class CharacterBuilder {
     }
     public CharacterBuilder setConstitutionModifier(int constitutionModifier) {
         this.character.setConstitutionModifier(constitutionModifier);
+        return this;
+    }
+    public CharacterBuilder setWisdomModifier(int wisdomModifier) {
+        this.character.setWisdom(wisdomModifier);;
+        return this;
+    }
+    public CharacterBuilder setIntelligenceModifier(int intelligenceModifier) {
+        this.character.setIntelligenceModifier(intelligenceModifier);;
+        return this;
+    }
+    public CharacterBuilder setCharismaModifier(int charismaModifier) {
+        this.character.setCharismaModifier(charismaModifier);
         return this;
     }
     public CharacterBuilder setStrengthModifier(int strengthModifier) {

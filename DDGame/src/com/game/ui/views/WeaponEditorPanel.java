@@ -40,7 +40,7 @@ import org.apache.commons.lang3.StringUtils;
 public class WeaponEditorPanel extends JPanel implements ActionListener {
 
     private JComboBox comboBox = null;
-
+    private JComboBox weaponModifier = null;
     public JComboBox getComboBox() {
         return comboBox;
     }
@@ -138,13 +138,23 @@ public class WeaponEditorPanel extends JPanel implements ActionListener {
         panel1.add(attackPts, c);
         c.gridx = 0;
         c.gridy = 5;
+        JLabel modifier = new JLabel("Modifier");
+        panel1.add(modifier,c);
+        c.gridx = 1;
+        weaponModifier = new JComboBox(Configuration.weaponModifier);
+        weaponModifier.setSelectedIndex(-1);
+        weaponModifier.setAlignmentX(0);
+        weaponModifier.setMaximumSize(new Dimension(100, 30));
+        panel1.add(weaponModifier, c);
+        c.gridx = 0;
+        c.gridy = 6;
         c.gridwidth = 2;
         JButton submit = new JButton("Save");
         submit.addActionListener(this);
         submit.setActionCommand("button");
         panel1.add(submit, c);
         c.gridx = 0;
-        c.gridy = 6;
+        c.gridy = 7;
         c.gridwidth = 2;
         c.weighty = 0;
         c.weightx =1;
@@ -175,11 +185,17 @@ public class WeaponEditorPanel extends JPanel implements ActionListener {
                         ((JComboBox) panel.getComponent(4)).setSelectedItem(weapon.getWeaponType());
                         ((JTextField) panel.getComponent(6)).setText(Integer.toString(weapon.getAttackRange()));
                         ((JTextField) panel.getComponent(8)).setText(Integer.toString(weapon.getAttackPts()));
+                        String modifier = weapon.getModifierInForce();
+                        if(modifier != null)
+                        	weaponModifier.setSelectedItem(modifier);
+                        else
+                        	weaponModifier.setSelectedIndex(-1);
                         return;
                     }
                 }
             }
-        } else {
+        } 
+        else{
             JButton btn = (JButton) ae.getSource();
             JPanel panel = (JPanel) btn.getParent();
             String name = ((JTextField) panel.getComponent(2)).getText();
@@ -198,6 +214,7 @@ public class WeaponEditorPanel extends JPanel implements ActionListener {
                 weapon.setAttackRange(Integer.parseInt(attackRnge));
                 weapon.setAttackPts(Integer.parseInt(attackPts));
                 weapon.setWeaponType(weaponType);
+                weapon.setModifierInForce(weaponModifier.getSelectedItem().toString());
                 boolean weaponAlrdyPresent = false;
                 int position = GameUtils.getPositionOfWeaponItem(name);
                 if (GameBean.weaponDetails == null) {

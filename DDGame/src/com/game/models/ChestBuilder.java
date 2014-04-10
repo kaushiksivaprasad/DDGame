@@ -1,26 +1,40 @@
 package com.game.models;
+/**
+ * this is a chestBuilder which is used to build a chest base on player's level
+ * @author º«ÐÅ
+ *
+ */
 public class ChestBuilder
 {
-	Player player;
+	GameCharacter player;
 	TileInformation tileInformation;
-	public ChestBuilder()
+	public ChestBuilder(TileInformation tileInformation, GameCharacter player)
 	{
-		
-	}
-	public void setData (TileInformation tileInformation, Player player)
-	{	
 		this.player = player;
 		this.tileInformation = tileInformation;
 		
 	}
+	
+	/**
+	 * change chest information
+	 * @return chest after changing
+	 */
 	public TileInformation build()
 	{
 		changeRingValue().changeArmourValue().changeWeaponValue();
 		return tileInformation;
 	}
+	
+	/**
+	 * change the value of Ring based on player's level
+	 * @return the object after changing
+	 */
 	public ChestBuilder changeRingValue()
 	{	
+	
 	    Item item= new ItemFactory("Ring", tileInformation).getItem();
+	    
+	    if(item !=null){
 	    String str = item.getModifierInForce();
 	    if(str.equalsIgnoreCase("Strength"))
 	    {
@@ -43,12 +57,22 @@ public class ChestBuilder
 	    	item.setArmourPts(player.getLevel());
 	    }
 	    
+//	    tileInformation.setRing(item);
+	   
+	    }
+	    
 	    return this;
 	}
 	
+	/**
+	 * change the value of Armour based on player's level
+	 * @return the object after changing
+	 */
 	public ChestBuilder changeArmourValue()
 	{
 		Item item = new ItemFactory("Armour",tileInformation).getItem();
+		
+		if(item !=null){
 		String str = item.getModifierInForce();
 	    if(str.equalsIgnoreCase("Intelligence"))
 	    {
@@ -74,12 +98,19 @@ public class ChestBuilder
 	    {
 	    	item.setArmourPts(player.getLevel());
 	    }
+	    
+		}
 	    return this;
 	}
 	
+	/**
+	 * change the value of Weapon based on player's level
+	 * @return the object after changing
+	 */
 	public ChestBuilder changeWeaponValue()
 	{
 		Item item = new ItemFactory("Weapon",tileInformation).getItem();
+		if(item !=null){
 		String str = item.getModifierInForce();
 	    if(str.equalsIgnoreCase("Attack"))
 	    {
@@ -89,6 +120,8 @@ public class ChestBuilder
 	    {
 	    	item.setDexterityModifer(player.getLevel());
 	    }
+	    
+		}
 	    return this;
 	}
 }

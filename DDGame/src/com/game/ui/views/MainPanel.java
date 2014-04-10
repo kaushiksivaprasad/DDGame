@@ -36,6 +36,7 @@ public class MainPanel extends JFrame implements ActionListener {
      * initiate the UI for Main Panel
      */
     public void initUI() {
+    	GameBean.doInit();
     	System.out.println("Test");
         
         JPanel functionPanel = new JPanel();
@@ -109,7 +110,6 @@ public class MainPanel extends JFrame implements ActionListener {
 	        });
         }else if (command == 1){
              try {
-            GameBean.doInit();
             if (GameBean.weaponDetails.size() > 0) {
                 JFrame frame = new JFrame();
                 frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
@@ -122,7 +122,6 @@ public class MainPanel extends JFrame implements ActionListener {
         }
         }else if (command == 2){
             try {
-                GameBean.doInit();
             } catch (Exception ex) {
                 Logger.getLogger(MainPanel.class.getName()).log(Level.SEVERE, null, ex);
             }

@@ -1,5 +1,10 @@
 package com.game.models;
 
+/**
+ * this class is used to return item with particular type
+ * @author º«ÐÅ
+ *
+ */
 public class ItemFactory 
 {
 	private TileInformation tileInformation;
@@ -21,6 +26,10 @@ public class ItemFactory
 		}
 		
 	}
+	/**
+	 * this is the geter for item
+	 * @return
+	 */
 	public Item getItem() 
 	{
 		return item;

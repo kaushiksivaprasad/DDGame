@@ -44,7 +44,7 @@ import javax.swing.SwingUtilities;
 public class InventoryPanel extends JDialog implements ActionListener{
     private int inventoryRow ;
     private int inventoryColumn;
-    private int inventorySize;
+	private int inventorySize;
     //public  static final Inventory in = new Inventory();
     
     public Inventory characterInventory = new Inventory();
@@ -72,6 +72,55 @@ public class InventoryPanel extends JDialog implements ActionListener{
     public int emptyNumber; //this is used to diceied which item is empty now so when unequip we can put item here
     public int newEmptyNumber = 99; //this is used to keep the number when we equip an item
     public JTextArea characterInformation;
+    
+    public int getInventoryRow() {
+		return inventoryRow;
+	}
+
+	public void setInventoryRow(int inventoryRow) {
+		this.inventoryRow = inventoryRow;
+	}
+
+	public int getInventoryColumn() {
+		return inventoryColumn;
+	}
+
+	public void setInventoryColumn(int inventoryColumn) {
+		this.inventoryColumn = inventoryColumn;
+	}
+
+	public int getInventorySize() {
+		return inventorySize;
+	}
+
+	public void setInventorySize(int inventorySize) {
+		this.inventorySize = inventorySize;
+	}
+
+	public Inventory getCharacterInventory() {
+		return characterInventory;
+	}
+
+	public void setCharacterInventory(Inventory characterInventory) {
+		this.characterInventory = characterInventory;
+	}
+
+	public GameCharacter getPlayer() {
+		return player;
+	}
+
+	public void setPlayer(GameCharacter player) {
+		this.player = player;
+	}
+
+	public int getEmptyNumber() {
+		return emptyNumber;
+	}
+
+	public void setEmptyNumber(int emptyNumber) {
+		this.emptyNumber = emptyNumber;
+	}
+
     
     public InventoryPanel(GameCharacter player){
         this.player = player ;
@@ -182,6 +231,20 @@ public class InventoryPanel extends JDialog implements ActionListener{
          bracers.addActionListener(this);
          bracers.setActionCommand("bracers");
          equipments[8].add(bracers);
+         
+         Weapon wea = characterInventory.getEquippedWeapon();
+         String weaponS = null;
+         if(wea != null){
+        	 weaponS = wea.getName();
+        	 weapon.setText(weaponS);
+             int a = wea.getStrengthModifer();
+             int b = this.player.getStrengthModifier();
+             this.player.setStrengthModifier(a+b);
+             a = wea.getDexterityModifer();
+             b = this.player.getDexterityModifier();
+             this.player.setDexterityModifier(a+b);
+             characterInformation.setText(this.makingInformationForCharacter());
+         }
          
          Armour ar = characterInventory.getBelt();
          String equipName = null;
@@ -410,8 +473,8 @@ public class InventoryPanel extends JDialog implements ActionListener{
       * @return the information of the weapon
       */
     public String makingInformationOfWeapon(Weapon W){
-        String AttackPts = Integer.toString(W.getAttackPts());
-        String AttackRange = Integer.toString(W.getAttackRange());
+        String AttackPts = Integer.toString(W.getStrengthModifer());
+        String AttackRange = Integer.toString(W.getDexterityModifer());
         String WeaponName = W.getName();
         String WeaponType = W.getWeaponType();
         StringBuilder InformationSB = new StringBuilder();
@@ -421,12 +484,12 @@ public class InventoryPanel extends JDialog implements ActionListener{
         InformationSB.append("WeaponType: ");
         InformationSB.append(WeaponType);
         InformationSB.append("\n");
-        InformationSB.append("AttackRange: ");
-        InformationSB.append(AttackRange);
-        InformationSB.append("\n");
-        InformationSB.append("AttackPts: ");
+        /*InformationSB.append("Attack: ");
         InformationSB.append(AttackPts);
         InformationSB.append("\n");
+        InformationSB.append("Damage: ");
+        InformationSB.append(AttackRange);
+        InformationSB.append("\n");*/
         String Information = InformationSB.toString();
         return Information;
     }
@@ -469,6 +532,10 @@ public class InventoryPanel extends JDialog implements ActionListener{
         return Information;
     }
     
+    /**
+     * making information for character view
+     * @return the information
+     */
     public String makingInformationForCharacter(){
     	String result = null;
     	StringBuilder sb = new StringBuilder();
@@ -566,6 +633,11 @@ public class InventoryPanel extends JDialog implements ActionListener{
     	return result;
     }
     
+    /**
+     * calculate base attack based on level
+     * @param level the level of character
+     * @return the base attack bonuss
+     */
     public int calculateBaseAttackBonuss(int level) {
 
 
@@ -581,6 +653,10 @@ public class InventoryPanel extends JDialog implements ActionListener{
         }
     }
     
+    /**
+     * caculate armor class for character
+     * @return armor class
+     */
     public int calculateArmorClass() {
             GameCharacter player = this.player;
             //player.getArmorModifier() + player.sheildModifier
@@ -652,7 +728,7 @@ public class InventoryPanel extends JDialog implements ActionListener{
     
     /**
      * this method is used to make information for other items
-     * @param name
+     * @param name the name of this item
      * @return the information of item
      */
     public String makingInformationForOthers(String name){
@@ -660,7 +736,11 @@ public class InventoryPanel extends JDialog implements ActionListener{
         return information;
     }
     
-    
+    /**
+     * this method is used to make information for ring
+     * @param r an object of Ring
+     * @return the information of ring
+     */
     public String makingInformationFOrRing(Ring r){
     	String s = null;
         String ArmourName = r.getName();
@@ -717,6 +797,12 @@ public class InventoryPanel extends JDialog implements ActionListener{
                 if(wea2 == null){
                     Weapon wea = (Weapon)currentInventory;
                     String name = wea.getName();
+                    int Attack = wea.getStrengthModifer();
+                    int damage = wea.getDexterityModifer();
+                    int a = player.getStrengthModifier();
+                    int b = player.getDexterityModifier();
+                    player.setStrengthModifier(Attack + a);
+                    player.setDexterityModifier(damage + b);
                     characterInventory.setEquippedWeapon(wea);
                     Buttons[currentItemNum].setText("");
                     newEmptyNumber = currentItemNum;
@@ -726,6 +812,18 @@ public class InventoryPanel extends JDialog implements ActionListener{
                 }else{
                     Weapon wea = (Weapon)currentInventory;
                     String name = wea.getName();
+                    int Attack = wea.getStrengthModifer();
+                    int damage = wea.getDexterityModifer();
+                    int a = player.getStrengthModifier();
+                    int b = player.getDexterityModifier();
+                    player.setStrengthModifier(Attack + a);
+                    player.setDexterityModifier(damage + b);
+                    Attack = wea2.getStrengthModifer();
+                    damage = wea2.getDexterityModifer();
+                    a = player.getStrengthModifier();
+                    b = player.getDexterityModifier();
+                    player.setStrengthModifier(a - Attack);
+                    player.setDexterityModifier(b - damage);
                     characterInventory.setEquippedWeapon(wea);
                     Buttons[currentItemNum].setText(wea2.getName());
                     weapon.setText(name);
@@ -752,7 +850,25 @@ public class InventoryPanel extends JDialog implements ActionListener{
                                         informationLable.setText("");
                                         inventoryButtonMap.remove(currentItemNum);
                                      }else{
-                                         characterInventory.setBoot(armor);
+                                    	int dp = player.getDexterityModifier();
+                                    	int sp = player.getStrengthModifier();
+                                    	int conp = player.getConstitutionModifier();
+                                    	int chp = player.getCharismaModifier();
+                                    	int wisp = player.getWisdomModifier();
+                                    	int intep = player.getIntelligenceModifier();
+                                    	int dex = ar.getDexterityModifer();
+                                    	int str = ar.getStrengthModifer();
+                                    	int con = ar.getConstitutionModifier();
+                                    	int ch = ar.getCharismaModifer();
+                                    	int wis = ar.getWisdomModifier();
+                                    	int inte = ar.getIntelligenceModifier();
+                                    	player.setStrengthModifier(sp - str);
+                                    	player.setDexterityModifier(dp - dex);
+                                    	player.setCharismaModifier(chp - ch);
+                                    	player.setConstitutionModifier(conp - con);
+                                    	player.setIntelligenceModifier(intep - inte);
+                                    	player.setWisdomModifier(wisp - wis);
+                                        characterInventory.setBoot(armor);
                                         Buttons[currentItemNum].setText(ar.getName());
                                         boot.setText(name);
                                         informationLable.setText("");
@@ -777,6 +893,24 @@ public class InventoryPanel extends JDialog implements ActionListener{
                                         informationLable.setText("");
                                         inventoryButtonMap.remove(currentItemNum);
                                      }else{
+                                    	 int dp = player.getDexterityModifier();
+                                     	int sp = player.getStrengthModifier();
+                                     	int conp = player.getConstitutionModifier();
+                                     	int chp = player.getCharismaModifier();
+                                     	int wisp = player.getWisdomModifier();
+                                     	int intep = player.getIntelligenceModifier();
+                                     	int dex = ar.getDexterityModifer();
+                                     	int str = ar.getStrengthModifer();
+                                     	int con = ar.getConstitutionModifier();
+                                     	int ch = ar.getCharismaModifer();
+                                     	int wis = ar.getWisdomModifier();
+                                     	int inte = ar.getIntelligenceModifier();
+                                     	player.setStrengthModifier(sp - str);
+                                     	player.setDexterityModifier(dp - dex);
+                                     	player.setCharismaModifier(chp - ch);
+                                     	player.setConstitutionModifier(conp - con);
+                                     	player.setIntelligenceModifier(intep - inte);
+                                     	player.setWisdomModifier(wisp - wis);
                                         characterInventory.setHelmet(armor);
                                         Buttons[currentItemNum].setText(ar.getName());
                                         helmet.setText(name);
@@ -859,6 +993,24 @@ public class InventoryPanel extends JDialog implements ActionListener{
                                         informationLable.setText("");
                                         inventoryButtonMap.remove(currentItemNum);
                                      }else{
+                                    	 int dp = player.getDexterityModifier();
+                                     	int sp = player.getStrengthModifier();
+                                     	int conp = player.getConstitutionModifier();
+                                     	int chp = player.getCharismaModifier();
+                                     	int wisp = player.getWisdomModifier();
+                                     	int intep = player.getIntelligenceModifier();
+                                     	int dex = ar.getDexterityModifer();
+                                     	int str = ar.getStrengthModifer();
+                                     	int con = ar.getConstitutionModifier();
+                                     	int ch = ar.getCharismaModifer();
+                                     	int wis = ar.getWisdomModifier();
+                                     	int inte = ar.getIntelligenceModifier();
+                                     	player.setStrengthModifier(sp - str);
+                                     	player.setDexterityModifier(dp - dex);
+                                     	player.setCharismaModifier(chp - ch);
+                                     	player.setConstitutionModifier(conp - con);
+                                     	player.setIntelligenceModifier(intep - inte);
+                                     	player.setWisdomModifier(wisp - wis);
                                         characterInventory.setBelt(armor);
                                         Buttons[currentItemNum].setText(ar.getName());
                                         belt.setText(name);
@@ -881,6 +1033,24 @@ public class InventoryPanel extends JDialog implements ActionListener{
                                         informationLable.setText("");
                                         inventoryButtonMap.remove(currentItemNum);
                                      }else{
+                                    	 int dp = player.getDexterityModifier();
+                                     	int sp = player.getStrengthModifier();
+                                     	int conp = player.getConstitutionModifier();
+                                     	int chp = player.getCharismaModifier();
+                                     	int wisp = player.getWisdomModifier();
+                                     	int intep = player.getIntelligenceModifier();
+                                     	int dex = ar.getDexterityModifer();
+                                     	int str = ar.getStrengthModifer();
+                                     	int con = ar.getConstitutionModifier();
+                                     	int ch = ar.getCharismaModifer();
+                                     	int wis = ar.getWisdomModifier();
+                                     	int inte = ar.getIntelligenceModifier();
+                                     	player.setStrengthModifier(sp - str);
+                                     	player.setDexterityModifier(dp - dex);
+                                     	player.setCharismaModifier(chp - ch);
+                                     	player.setConstitutionModifier(conp - con);
+                                     	player.setIntelligenceModifier(intep - inte);
+                                     	player.setWisdomModifier(wisp - wis);
                                         characterInventory.setBracers(armor);
                                         Buttons[currentItemNum].setText(ar.getName());
                                         bracers.setText(name);
@@ -916,6 +1086,24 @@ public class InventoryPanel extends JDialog implements ActionListener{
                         informationLable.setText("");
                         inventoryButtonMap.remove(currentItemNum);
                     }else{
+                    	int dp = player.getDexterityModifier();
+                    	int sp = player.getStrengthModifier();
+                    	int conp = player.getConstitutionModifier();
+                    	int chp = player.getCharismaModifier();
+                    	int wisp = player.getWisdomModifier();
+                    	int intep = player.getIntelligenceModifier();
+                    	int dex = ri2.getDexterityModifer();
+                    	int str = ri2.getStrengthModifer();
+                    	int con = ri2.getConstitutionModifier();
+                    	int ch = ri2.getCharismaModifer();
+                    	int wis = ri2.getWisdomModifier();
+                    	int inte = ri2.getIntelligenceModifier();
+                    	player.setStrengthModifier(sp - str);
+                    	player.setDexterityModifier(dp - dex);
+                    	player.setCharismaModifier(chp - ch);
+                    	player.setConstitutionModifier(conp - con);
+                    	player.setIntelligenceModifier(intep - inte);
+                    	player.setWisdomModifier(wisp - wis);
                         String name = ri.getName();
                         characterInventory.setRing(ri);
                         Buttons[currentItemNum].setText(ri2.getName());
@@ -936,6 +1124,24 @@ public class InventoryPanel extends JDialog implements ActionListener{
                 LinkedList<Item> li;
                 if(currentInventory instanceof Weapon){
                     Weapon wea = (Weapon)currentInventory;
+                    int dp = player.getDexterityModifier();
+                	int sp = player.getStrengthModifier();
+                	int conp = player.getConstitutionModifier();
+                	int chp = player.getCharismaModifier();
+                	int wisp = player.getWisdomModifier();
+                	int intep = player.getIntelligenceModifier();
+                	int dex = wea.getDexterityModifer();
+                	int str = wea.getStrengthModifer();
+                	int con = wea.getConstitutionModifier();
+                	int ch = wea.getCharismaModifer();
+                	int wis = wea.getWisdomModifier();
+                	int inte = wea.getIntelligenceModifier();
+                	player.setStrengthModifier(sp - str);
+                	player.setDexterityModifier(dp - dex);
+                	player.setCharismaModifier(chp - ch);
+                	player.setConstitutionModifier(conp - con);
+                	player.setIntelligenceModifier(intep - inte);
+                	player.setWisdomModifier(wisp - wis);
                     String name = wea.getName();
                     li = characterInventory.getItems();
                     if(li != null){
@@ -1208,15 +1414,15 @@ public class InventoryPanel extends JDialog implements ActionListener{
          Player p = new Player();
          LinkedList<Item> i = new LinkedList<>();
          Weapon w = new Weapon();
-          w.setAttackPts(12);
-          w.setAttackRange(2);
+          w.setStrengthModifer(1);;
+          w.setDexterityModifer(6);;
           w.setName("Sword");
           w.setItemID(0);
           w.setWeaponType("Meele");
           
           Weapon w2 = new Weapon();
-          w2.setAttackPts(10);
-          w2.setAttackRange(5);
+          w2.setStrengthModifer(3);
+          w2.setDexterityModifer(2);;
           w2.setName("LongBow");
           w2.setItemID(1);
           w2.setWeaponType("Range");
@@ -1308,7 +1514,7 @@ public class InventoryPanel extends JDialog implements ActionListener{
           p.setInventory(in);
           p.setStrength(10);
           p.setStrengthModifier(2);
-          p.setCharismaModifier(11);
+          p.setCharisma(11);
           p.setCharismaModifier(3);
           p.setConstitution(12);
           p.setConstitutionModifier(4);

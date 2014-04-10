@@ -7,7 +7,7 @@ package com.game.ui.views;
 
 import com.game.models.Armour;
 import com.game.models.Configuration;
-import static com.game.models.Configuration.armourTypes;
+import static com.game.models.Configuration.*;
 import com.game.models.GameBean;
 import com.game.models.Item;
 import com.game.models.Potion;
@@ -54,6 +54,8 @@ public class ItemPanel extends JPanel implements ActionListener {
     private int location = -1;
     private JCheckBox chkBox = null;
     private JComboBox armourBox = null;
+    private JComboBox ringModifier = null;
+    private JComboBox armorModifier = null;
     /**
      * This is a constructor used to create the object of this class. Parameters are
      * passed to make it behave differently..
@@ -215,6 +217,16 @@ public class ItemPanel extends JPanel implements ActionListener {
         JTextField incAttackTxt = new JTextField("");
         incAttackTxt.setColumns(20);
         panel1.add(incAttackTxt, c);
+        c.gridx = 0;
+        c.gridy = 5;
+        JLabel ringModi = new JLabel("Modifier");
+        panel1.add(ringModi, c);
+        c.gridx = 1;
+        ringModifier = new JComboBox(Configuration.ringModifier);
+        ringModifier.setSelectedIndex(-1);
+        ringModifier.setAlignmentX(0);
+        ringModifier.setMaximumSize(new Dimension(100, 30));
+        panel1.add(ringModifier, c);
     }
     /**
      * This method creates fields needed for the panel to behave as a potion editor.
@@ -251,6 +263,16 @@ public class ItemPanel extends JPanel implements ActionListener {
         armourBox.setAlignmentX(0);
         armourBox.setMaximumSize(new Dimension(100, 30));
         panel1.add(armourBox, c);
+        c.gridx = 0;
+        c.gridy = 4;
+        JLabel armourModi = new JLabel("Modifier");
+        panel1.add(armourModi, c);
+        c.gridx = 1;
+        armorModifier = new JComboBox(Configuration.armorModifier);
+        armorModifier.setSelectedIndex(-1);
+        armorModifier.setAlignmentX(0);
+        armorModifier.setMaximumSize(new Dimension(100, 30));
+        panel1.add(armorModifier, c);
         
     }
     /**
@@ -282,6 +304,10 @@ public class ItemPanel extends JPanel implements ActionListener {
                 ((JTextField) panel.getComponent(4)).setText("" + ring.getIncHealth());
                 ((JTextField) panel.getComponent(6)).setText(Integer.toString(ring.getIncArmour()));
                 ((JTextField) panel.getComponent(8)).setText(Integer.toString(ring.getIncAttack()));
+                if(ring.getModifierInForce() != null)
+                	ringModifier.setSelectedItem(ring.getModifierInForce().toString());
+                else
+                	ringModifier.setSelectedIndex(-1);
                 return;
             }
         }
@@ -298,6 +324,10 @@ public class ItemPanel extends JPanel implements ActionListener {
             if (armour.getName().equalsIgnoreCase(name)) {
                 ((JTextField) panel.getComponent(2)).setText(name);
                 ((JTextField) panel.getComponent(4)).setText("" + armour.getArmourPts());
+                if(armour.getModifierInForce() != null)
+                	armorModifier.setSelectedItem(armour.getModifierInForce());
+                else
+                	armorModifier.setSelectedIndex(-1);
                 String temp = armour.getArmourType();
                 for(int i = 0; i < Configuration.armourTypes.length; i++){
                     if(temp.equalsIgnoreCase(Configuration.armourTypes[i])){
@@ -349,7 +379,8 @@ public class ItemPanel extends JPanel implements ActionListener {
         String incHealth = ((JTextField) panel.getComponent(4)).getText();
         String incArmour = ((JTextField) panel.getComponent(6)).getText();
         String incAttack = ((JTextField) panel.getComponent(8)).getText();
-        if (StringUtils.isNotBlank(name) && StringUtils.isNotBlank(incHealth) && StringUtils.isNotBlank(incArmour) && StringUtils.isNotBlank(incAttack)) {
+        Object mod = ringModifier.getSelectedItem();
+        if (StringUtils.isNotBlank(name) && StringUtils.isNotBlank(incHealth) && StringUtils.isNotBlank(incArmour) && StringUtils.isNotBlank(incAttack) && mod != null) {
             int position = GameUtils.getPositionOfRingItem(name);
             if (GameBean.ringDetails == null) {
                 GameBean.ringDetails = new ArrayList<>();
@@ -362,6 +393,7 @@ public class ItemPanel extends JPanel implements ActionListener {
             ring.setIncArmour(Integer.parseInt(incArmour));
             ring.setIncHealth(Integer.parseInt(incHealth));
             ring.setIncAttack(Integer.parseInt(incAttack));
+            ring.setModifierInForce(mod.toString());
             GameBean.ringDetails.add(ring);
             try {
                 GameUtils.writeItemsToXML(GameBean.ringDetails, Configuration.PATH_FOR_RINGS);
@@ -402,7 +434,8 @@ public class ItemPanel extends JPanel implements ActionListener {
         String armourType = null;
         if(temp != null)
             armourType = temp.toString();
-        if (StringUtils.isNotBlank(armourPts) && StringUtils.isNotBlank(name)&& StringUtils.isNotBlank(armourType)) {
+        Object mod = armorModifier.getSelectedItem();
+        if (StringUtils.isNotBlank(armourPts) && StringUtils.isNotBlank(name)&& StringUtils.isNotBlank(armourType) && mod != null) {
             int position = GameUtils.getPositionOfArmourItem(name);
             if (position != -1) {
                 GameBean.armourDetails.remove(position);
@@ -414,6 +447,7 @@ public class ItemPanel extends JPanel implements ActionListener {
             armour.setName(name);
             armour.setArmourPts(Integer.parseInt(armourPts));
             armour.setArmourType(armourType);
+            armour.setModifierInForce(mod.toString());
             GameBean.armourDetails.add(armour);
             try {
                 GameUtils.writeItemsToXML(GameBean.armourDetails, Configuration.PATH_FOR_ARMOURS);
@@ -553,7 +587,8 @@ public class ItemPanel extends JPanel implements ActionListener {
             } else if (treasurePanel) {
                 getTreasureDetailForName(name, panel);
             }
-        } else {
+        }
+        else {
             JButton btn = (JButton) ae.getSource();
             JPanel panel = (JPanel) btn.getParent();
             String name = ((JTextField) panel.getComponent(2)).getText();

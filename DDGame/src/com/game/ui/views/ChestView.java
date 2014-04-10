@@ -24,6 +24,11 @@ import com.game.models.Ring;
 import com.game.models.TileInformation;
 import com.game.models.Weapon;
 
+/**
+ * this class is used for create chest view 
+ * @author º«ÐÅ
+ *
+ */
 public class ChestView extends JDialog implements ActionListener{
 	TileInformation tileInformation;
 	JCheckBox chkBox[] = new JCheckBox[3];
@@ -36,6 +41,9 @@ public class ChestView extends JDialog implements ActionListener{
 		doGui();
 	}
 
+	/**
+	 * this method is used to create the UI of the chest view
+	 */
 	public void doGui() {
 		JPanel panel = new JPanel();
 		panel.setBorder(BorderFactory.createEmptyBorder(5,5,5,5));
@@ -105,6 +113,12 @@ public class ChestView extends JDialog implements ActionListener{
 		player.getInventory().setItems(new LinkedList<Item>());
 		new ChestView(info, player);
 	}
+	
+	/**
+	 * this metohd is used to making information for item
+	 * @param item an object of item 
+	 * @return the information
+	 */
 	public String fetchContentsOfTheItem(Item item) {
 		String mod = item.getModifierInForce();
 		StringBuilder builder = new StringBuilder(item.getName());
@@ -146,7 +160,12 @@ public class ChestView extends JDialog implements ActionListener{
 		builder.append(" pts ");
 		return builder.toString();
 	}
-
+	
+	/**
+	 * this method is used to make panel for item which will display basic information of this item
+	 * @param item the item we need make panel
+	 * @return the panel we make
+	 */
 	public JPanel constructPanelForEachItem(Item item) {
 		JPanel panel = null;
 		if (item != null) {
@@ -168,7 +187,10 @@ public class ChestView extends JDialog implements ActionListener{
 		}
 		return panel;
 	}
-
+	
+	/**
+	 * this method is used to implement the function of chest view
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		Inventory inv = player.getInventory();

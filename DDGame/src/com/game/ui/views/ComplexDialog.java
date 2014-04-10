@@ -187,6 +187,14 @@ public class ComplexDialog extends JDialog implements ActionListener,WindowListe
             if(info == null){
                 info = new TileInformation();
             }
+            if(checkBox[1].isSelected() || checkBox[2].isSelected() || checkBox[3].isSelected())
+            {
+            	info.setChest(true);
+            }
+            else
+            {
+            	info.setChest(false);
+            }
             info.setLocation(location);
             GameBean.mapInfo.getPathMap().put(location, info);
             this.dispose();

@@ -53,4 +53,9 @@ public class Configuration {
     };
     public static String[] modifiersList = {"Intelligence","Wisdom","Armor","Strength","Constitution","Charisma","Dexterity","Attack", "damage"};
     public static String[] weaponModifier = {"Attack", "damage"};
+    public static String[] ringModifier = {"Wisdom","Armor","Strength","Constitution","Charisma"};
+    public static enum ringMod{
+    	Wisdom,Armor,Strength,Constitution,Charisma
+    };
+    public static String[] armorModifier = {"Intelligence","Wisdom","Armor","Strength","Constitution","Charisma","Dexterity"};
 }
